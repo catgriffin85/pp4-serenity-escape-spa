@@ -1,0 +1,171 @@
+[
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Facial",
+            "treatment": "Anti-Aging Facial",
+            "treatment_id": "002",
+            "description": "<p><b>Designed to reduce the appearance of fine lines and wrinkles, the anti-aging facial uses ingredients like hyaluronic acid, retinol, and peptides to stimulate collagen production and promote skin regeneration. This facial often includes a gentle massage to improve circulation and give the skin a youthful glow.</p>",
+            "duration": "75 minutes",
+            "cost": "€140",
+            "status": 1
+        }
+    }, 
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Facial",
+            "treatment": "Hydrating Facial",
+            "treatment_id": "003",
+            "description": "<p><b>A hydrating facial is perfect for dry or dehydrated skin. It includes moisturizing treatments such as masks, serums, and oils that help to restore the skin's natural moisture balance. The treatment aims to nourish and hydrate the skin, leaving it feeling soft, smooth, and rejuvenated.</p>",
+            "duration": "45 minutes",
+            "cost": "€70",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Facial",
+            "treatment": "Brightening Facial",
+            "treatment_id": "004",
+            "description": "<p><b>This facial treatment is designed to even out skin tone, reduce hyperpigmentation, and enhance the skin’s radiance. Using brightening ingredients like vitamin C, alpha hydroxy acids (AHAs), or kojic acid, this facial helps to reduce dark spots and discoloration, giving the skin a luminous and glowing appearance.</p>",
+            "duration": "45 minutes",
+            "cost": "€65",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Facial",
+            "treatment": "Oxygen Facial",
+            "treatment_id": "005",
+            "description": "<p><b>The oxygen facial uses a stream of pressurized oxygen infused with vitamins, antioxidants, and other nutrients to hydrate and rejuvenate the skin. It helps to stimulate circulation and promote the absorption of these nutrients, leaving the skin looking plump, refreshed, and youthful. It’s ideal for those looking for a quick skin boost before a special event.</p>",
+            "duration": "75 minutes",
+            "cost": "€120",
+            "status": 1
+        }
+    }, 
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Facial",
+            "treatment": "Collagen Boost Facial",
+            "treatment_id": "006",
+            "description": "<p><b>Aimed at enhancing skin elasticity, this facial uses collagen-infused serums and masks to firm and plump the skin, leaving it smooth and youthful-looking.</p>",
+            "duration": "45 minutes",
+            "cost": "€65",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Massage",
+            "treatment": "Swedish Massage",
+            "treatment_id": "007",
+            "description": "<p><b>A Swedish massage is a relaxing and gentle form of massage that uses long, smooth strokes, kneading, and circular movements. It’s designed to increase blood circulation, ease muscle tension, and promote relaxation. This massage is ideal for people who are new to massage or looking for stress relief and relaxation.</p>",
+            "duration": "45 minutes",
+            "cost": "€80",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Massage",
+            "treatment": "Deep Tissue Massage",
+            "treatment_id": "008",
+            "description": "<p><b>Deep tissue massage focuses on the deeper layers of muscle and connective tissue. Using slow, firm pressure, this massage targets areas of chronic tension or pain, such as the lower back, shoulders, and neck. It’s particularly beneficial for individuals with muscle stiffness or those recovering from injuries.</p>",
+            "duration": "75 minutes",
+            "cost": "€90",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Massage",
+            "treatment": "Hot Stone Massage",
+            "treatment_id": "009",
+            "description": "<p><b>Hot stone massage involves the use of smooth, heated stones that are placed on key points of the body. The heat from the stones helps to relax muscles and improve circulation, while the therapist uses them to massage the body. This soothing treatment is perfect for those seeking relaxation and relief from muscle tension.</p>",
+            "duration": "45 minutes",
+            "cost": "€70",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Massage",
+            "treatment": "Aromatherapy Massage",
+            "treatment_id": "010",
+            "description": "<p><b>An aromatherapy massage combines the benefits of massage therapy with the use of essential oils. The therapist will use a blend of oils, chosen based on the individual’s needs (such as relaxation, energy, or pain relief). The scent and properties of the oils enhance the therapeutic effects of the massage, promoting emotional and physical well-being.</p>",
+            "duration": "75 minutes",
+            "cost": "€90",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Massage",
+            "treatment": "Sports Massage",
+            "treatment_id": "011",
+            "description": "<p><b>A sports massage is designed to target the muscles used in physical activity. It can be used both as a preventative measure or to treat injuries. The massage typically involves a combination of techniques such as kneading, stretching, and pressure point therapy, which help to reduce muscle soreness, improve flexibility, and enhance athletic performance.</p>",
+            "duration": "105 minutes",
+            "cost": "€140",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Massage",
+            "treatment": "Reflexology",
+            "treatment_id": "012",
+            "description": "<p><b>Focused on specific points on the feet, hands, or ears, this therapy aims to promote healing and balance throughout the body by stimulating reflex areas that correspond to organs and systems.</p>",
+            "duration": "45 minutes",
+            "cost": "€60",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Mum To Be",
+            "treatment": "Prenatal Massage",
+            "treatment_id": "013",
+            "description": "<p><b>A prenatal massage is specifically designed for expectant mothers to help relieve the physical discomforts of pregnancy, such as back pain, swelling, and muscle tension. This massage is typically performed while the mother is lying on her side or sitting upright, with cushions or pillows for support. The therapist uses gentle strokes and techniques tailored to the needs of the mother, ensuring comfort and relaxation. It helps reduce stress, alleviate tension, and improve circulation.</p>",
+            "duration": "45 minutes",
+            "cost": "€80",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Mum To Be",
+            "treatment": "Maternity Reflexology",
+            "treatment_id": "014",
+            "description": "<p><b>Maternity reflexology is a specialized form of reflexology aimed at pregnant women. This treatment involves applying gentle pressure to specific reflex points on the feet, hands, and ears that correspond to different areas of the body. Reflexology during pregnancy can help alleviate common issues such as nausea, fatigue, and swollen feet, and may also promote relaxation and balance. It is a non-invasive and soothing therapy that is safe for most pregnant women, though it should be avoided in certain medical conditions.</p>",
+            "duration": "45 minutes",
+            "cost": "€80",
+            "status": 1
+        }
+    },
+    {
+        "model": "treatments.treatment",
+        "fields": {
+            "category": "Mum To Be",
+            "treatment": "Postnatal Massage",
+            "treatment_id": "015",
+            "description": "<p><b>A postnatal massage is designed for mothers who have recently given birth. This massage helps promote recovery after childbirth by targeting areas of the body that may have become tense or sore during labor. It focuses on easing muscle tightness, reducing stress, and supporting emotional well-being. The massage can also help to improve circulation, reduce swelling, and relieve tension in areas like the lower back, shoulders, and neck. Postnatal massage can also support the body’s natural healing process after delivery.</p>",
+            "duration": "75 minutes",
+            "cost": "€100",
+            "status": 1
+        }
+    }
+]
+

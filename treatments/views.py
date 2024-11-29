@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Treatment
 
 # Create your views here.
-def treatments_list(request):
-    return HttpResponse("This is the treatments page")
+class TreatmentList(generic.ListView):
+    queryset = Treatment.objects.all()
+    template_name = "treatments_page.html"
+    context_object_name = "treatments"
