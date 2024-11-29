@@ -9,7 +9,7 @@
     <h1>Our Treatments</h1>
     <ul>
         {% for treatment in treatments %}
-            <li>{{ treatment.treatment }} - {{ treatment.description }} - {{ treatment.duration }} - {{ treatment.cost }}</li>
+            <li><h3>{{ treatment.treatment }}</h3><p>{{ treatment.description }}</p><p><br><em>{{ treatment.duration }} - {{ treatment.cost }}</em></p></li>
         {% endfor %}
     </ul>
 </body>
