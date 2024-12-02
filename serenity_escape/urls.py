@@ -21,7 +21,7 @@ from book_now import views as book_now_views
 
 urlpatterns = [
     path('', index_views.index, name='index'),
-    path('', include("treatments.urls"), name="treatments-urls"),
+    path('', include("treatments.urls"), name="treatments"),
     path('book_now/', book_now_views.book_app, name='book-now'),
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
