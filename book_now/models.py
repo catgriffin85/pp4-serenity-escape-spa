@@ -17,4 +17,4 @@ class Appointment(models.Model):
         ordering = ["appointment_date"]
 
     def __str__(self):
-        return f"{self.booking_id} : {self.treatment}. {self.appointment_time}, {self.appointment_date}"
+        return f"{self.booking_id} : {self.treatment_selected}. {self.appointment_time}, {self.appointment_date}"
