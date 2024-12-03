@@ -20,9 +20,9 @@ from homepage import views as index_views
 
 
 urlpatterns = [
-    path('', index_views.index, name='index'),
-    path('', include("treatments.urls"), name="treatments"),
-    path('', include("book_now.urls"), name="book_now"),
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),path('', index_views.index, name='index'),
+    path('', include("treatments.urls"), name="treatments"),
+    path('', include("book_now.urls"), name="book_now"),
 ]
