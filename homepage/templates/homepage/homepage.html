@@ -3,17 +3,35 @@
 
 {% block content %}
 
-<!-- book_now.html content starts here -->
+<!--homepage.html content starts here -->
+<div class="image-container">
+    <img src="{% static 'images/sand-background.jpg' %}"
+        alt="background image">
+</div>
 <div class="container-fluid">
-    <div class="row">
-        <div class="image-container">
-            <img class="card-img-top" src="{% static 'images/water-with-flower.jpg' %}"
-            alt="background image">
-        </div>
-        <p class="test-font">Homepage Placeholder Text</p>
-    </div>
+    <h2 class="main-heading">Welcome to Serenity Escape Spa</h2>
+    <p class="welcome">Indulge yourself at Serenity Escape Spa where we offer a complete suite of relaxation and personal care packages</p>
+</div>
+<br>
+<div class="introduction">
+    <p>Step into a world where tranquility meets luxury at Serenity Escape Spa, your ultimate retreat for relaxation, rejuvenation, and self-care. 
+        Nestled in a serene setting, our spa is thoughtfully designed to provide an oasis of calm in the midst of life's busy rhythms.
+        At Serenity Escape Spa, we believe in the art of holistic well-being. From our soothing massages to revitalizing facials and indulgent body treatments, 
+        each service is carefully curated to restore balance to your mind, body, and spirit. Our highly skilled therapists 
+        and estheticians use premium products and tailor each experience to meet your unique needs, ensuring you leave feeling refreshed and renewed.        
+        Whether you're seeking a moment of peace, a luxurious escape, or an opportunity to enhance your wellness journey, 
+        Serenity Escape Spa offers a haven where relaxation knows no bounds. Immerse yourself in the gentle sounds, calming aromas, 
+        and warm ambiance that make every visit a transformative experience.        
+        Discover the perfect harmony of comfort and care at Serenity Escape Spa – because you deserve nothing less than the best. Your escape begins here.</p>
+</div>
+<br>
+<div class="intro-treatments">
+    <img class="intro-image" src="{% static 'images/spa-1.jpg' %}" alt="oil-image">
+    <p>Experience the epitome of relaxation and rejuvenation—browse our extensive collection of luxurious spa treatments here, 
+        and find the perfect way to unwind, refresh, and revitalize your body and mind</p>
     
+        <a href="#" class="btn btn-md active treatment-btn" role="button" aria-pressed="true">View our Treatments</a>
 </div>
 
-<!-- book_now.html content ends here -->
+<!-- homepage.html content ends here -->
 {% endblock %}

@@ -3,6 +3,11 @@
 {% block content %}
 
 <!-- book_now.html content starts here -->
+{% if user.is_authenticated %}
+<p class="text-start m-3">You are logged in as {{ user }}</p>
+{% else %}
+<p class="text-start m-3">You are not logged in</p>
+{% endif %}
 <div class="container-fluid">
     <div class="row">
         <p>Placeholder Text</p>
