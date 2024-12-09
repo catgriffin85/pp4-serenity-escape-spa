@@ -28,12 +28,11 @@ body {
 .image-container img {
     position:relative;
     width: 100%;
-    height: 10%;
-    max-height: 20rem;
+    height: 30%;
+    max-height: 30rem;
     left: 0;
     margin: 0;
     padding: 0;
-    opacity: .5;
     object-fit: cover;
 }
 
