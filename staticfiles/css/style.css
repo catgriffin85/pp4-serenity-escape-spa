@@ -1,0 +1,80 @@
+* {
+    font-family: "Ysabeau Infant", sans-serif;
+    color: #3c3c3f;
+}
+
+body {
+    background-color: rgb(247, 236, 223);
+}
+
+/* Nav bar */
+.brand {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.navbar-nav {
+    font-size: 1.5rem;
+    font-weight: 750;
+}
+
+.nav-item{
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+/* Homepage */
+
+.image-container img {
+    position:relative;
+    width: 100%;
+    height: 10%;
+    max-height: 20rem;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    opacity: .5;
+    object-fit: cover;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
+.main-heading {
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+
+.welcome {
+    font-size: x-large;
+    font-style: italic;
+}
+
+.introduction {
+    font-size: large;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.intro-treatments img {
+    object-position: center;
+    width: 50%;
+    height: 30%;
+    max-width: 80%;
+    max-height: 60%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+.intro-treatments {
+    text-align: center;
+    background-color:  rgb(248, 243, 238);;
+    padding: 1rem;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.treatment-btn {
+    background-color: rgb(240, 196, 102);
+}
