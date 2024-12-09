@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Treatment
+from django.templatetags.static import static
 
 # Create your views here.
 class TreatmentList(generic.ListView):

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -13,13 +14,20 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="category">{{ treatment.category }}</p>
-                                </div>
+                            <div class="image-flash">
+                                <h2 class="category">{{ treatment.category }}</h2>
                             </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ treatment.treatment }}</h2>
+                                <div class="image-container">
+                                    <img class="card-image" src="{% if treatment.category == 'Facial' %}
+                                                {% static 'images/facial.jpg' %}
+                                            {% elif treatment.category == 'Massage' %}
+                                                {% static 'images/massage.jpg' %}
+                                            {% else %}
+                                                {% static 'images/mum-to-be.jpg' %}
+                                            {% endif %}" 
+                                        alt="Category Image">
+                                </div>
+                                <h3 class="card-title">{{ treatment.treatment }}</h3>
                             </a>
 
                             <hr />
@@ -28,6 +36,7 @@
                             <hr />
                             <p class="card-text text-muted h6"><em>{{ treatment.duration }} - {{ treatment.cost }}</em>
                             </p>
+                            <a href="{% url 'book-app' %}" class="btn btn-md active book-btn" role="button" aria-pressed="true">Book Now</a>
                         </div>
                     </div>
                 </div>
