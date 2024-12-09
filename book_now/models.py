@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from treatments.models import Treatment
+from datetime import time
 
 # Create your models here.
 class Appointment(models.Model):
@@ -18,3 +19,25 @@ class Appointment(models.Model):
 
     def __str__(self):
         return f"{self.booking_id}/{self.name} - {self.treatment_selected} at {self.appointment_time} on {self.appointment_date}"
+
+
+class BookAppointment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    treatment = models.ForeignKey(Treatment, on_delete=models.CASCADE)
+    date = models.DateField()
+    time = models.TimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('date', 'time', 'treatment')
+    
+    def __str__(self):
+        return f"{self.treatment.treatment} on {self.date} at {self.time}"
+
+
+class TimeSlot(models.Model):
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+
+    def __str__(self):
+        return f"{self.start_time} - {self.end_time}"

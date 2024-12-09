@@ -8,11 +8,13 @@
 {% else %}
 <p class="text-start m-3">You are not logged in</p>
 {% endif %}
-<div class="container-fluid">
-    <div class="row">
-        <p>Placeholder Text</p>
-    </div>
-    
+<div class="container">
+    <h1>Book an Appointment</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
 </div>
 
 <!-- book_now.html content ends here -->
