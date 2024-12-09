@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic
-from .models import Appointment, BookAppointment, TimeSlot
+from .models import Appointment, BookAppointment
 from treatments.models import Treatment
 from .forms import AppointmentForm
 

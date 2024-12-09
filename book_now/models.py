@@ -7,8 +7,8 @@ from datetime import time
 class Appointment(models.Model):
     booking_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="appointments")
-    treatment_selected = models.ForeignKey(Treatment, on_delete=models.CASCADE, related_name="appointments")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="customer")
+    treatment_selected = models.ForeignKey('treatments.Treatment', on_delete=models.CASCADE, related_name="appointments")
     appointment_date = models.DateField()
     appointment_time = models.TimeField()
     requests = models.CharField(max_length=200)
@@ -22,8 +22,8 @@ class Appointment(models.Model):
 
 
 class BookAppointment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    treatment = models.ForeignKey(Treatment, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="client")
+    treatment = models.ForeignKey('treatments.Treatment', on_delete=models.CASCADE, related_name="booking")
     date = models.DateField()
     time = models.TimeField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -32,12 +32,4 @@ class BookAppointment(models.Model):
         unique_together = ('date', 'time', 'treatment')
     
     def __str__(self):
-        return f"{self.treatment.treatment} on {self.date} at {self.time}"
-
-
-class TimeSlot(models.Model):
-    start_time = models.TimeField()
-    end_time = models.TimeField()
-
-    def __str__(self):
-        return f"{self.start_time} - {self.end_time}"
+        return f"{self.treatment} on {self.date} at {self.time}"
