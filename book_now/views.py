@@ -7,36 +7,44 @@ from treatments.models import Treatment
 from .forms import AppointmentForm
 
 # Create your views here.
-class BookApp(generic.ListView):
-    queryset = Appointment.objects.all().order_by("appointment_date")
-    template_name = "book_now.html"
-    context_object_name = "book_now"
+#class BookApp(generic.ListView):
+#    queryset = Appointment.objects.all().order_by("appointment_date")
+#    template_name = "book_now.html"
+#    context_object_name = "book_now"
 
 
 @login_required
 def book_appointment(request):
     if request.method == 'POST':
-        form = AppointmentForm(request.POST)
-        if form.is_valid():
-            appointment = form.save(commit=False)
+        appointment_form = AppointmentForm(request.POST)
+        if appointment_form.is_valid():
+            appointment = appointment_form.save(commit=False)
             appointment.user = request.user
 
-            existing_appointments = BookAppointment.objects.filter(
-                date = appointment.date, time = appointment.time 
+            # Check for existing appointments
+            existing_appointments = appointment_form.Meta.model.objects.filter(
+                date=appointment.date, time=appointment.time
             ).count()
-            if existing_appointments >=2:
+            if existing_appointments >= 2:
                 messages.error(request, "This time is fully booked. Please try another time.")
             else:
                 appointment.save()
                 messages.success(request, "Appointment booked successfully!")
-                return redirect('home')
+                return redirect('list_appointments')  
         else:
-            form = AppointmentForm()
-        
-        return render(request, 'book_now/book_now.html', {'form':form})
+            # Form is invalid; show errors in the template
+            print("Form errors:", appointment_form.errors)
+
+    else:
+        # Initialize form for GET request
+        appointment_form = AppointmentForm()
+
+    # Render form for both invalid POST and GET requests
+    return render(request, 'book_now.html', {'appointment_form': appointment_form})
+
 
 
 @login_required
 def list_appointments(request):
     appointments = Appointment.objects.filter(user=request.user)
-    return render(request, 'book_now/list_appointments.html', {'appointments': appointments})
+    return render(request, 'book_now/list_appointments.html', {'appointment': appointment})

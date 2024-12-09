@@ -80,6 +80,15 @@ body {
 
 /* Treatments Page */
 
+.card-image {
+    object-position: center;
+    width: 50%;
+    height: 30%;
+    max-width: 80%;
+    max-height: 60%;
+    padding: 0,0,1,0;
+}
+
 .card-body {
     text-align: center;
     background-color:  rgb(248, 243, 238);;
@@ -88,4 +97,9 @@ body {
 
 .book-btn {
     background-color: rgb(240, 196, 102);
+}
+
+.page-link {
+    background-color:  rgb(248, 243, 238);;
+    color: #3c3c3f;
 }
