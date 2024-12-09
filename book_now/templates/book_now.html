@@ -5,18 +5,35 @@
 {% block content %}
 
 <!-- book_now.html content starts here -->
-{% if user.is_authenticated %}
-<p class="text-start m-3">You are logged in as {{ user }}</p>
-{% else %}
-<p class="text-start m-3">You are not logged in</p>
-{% endif %}
+
 <div class="container">
-    <h2>Book an Appointment</h2>
+    <div class="booking-form">
+    <h2 class="book-app-heading">Book an Appointment</h2>
+    {% if user.is_authenticated %}
+    <p class="text-start m-3">You are logged in as {{ user }}</p>
+    {% else %}
+    <p class="text-start m-3">You are not logged in, please login to book an appointment.</p>
+    {% endif %}
     <form method="post">
         {% csrf_token %}
         {{ appointment_form | crispy }}
         <button type="submit" class="btn book-btn">Book Now</button>
     </form>
+    </div>
+    <br>
+        <div class="about-us">
+        <h3 class="about-us-heading">About us</h3>
+        <br>
+        <p class="info"><i class="fa-solid fa-location-dot info"></i> Find Us</p>
+        <p class="details"> The Forest Glen Hotel, Ennis, Co. Clare</p>
+        <p class="info"><i class="fa-solid fa-phone info"></i> Call Us</p>
+        <p class="details"> (065) 605 123</p>
+        <p class="info"><i class="fa-solid fa-envelope info"></i> Email Us</p>
+        <p class="details"> relax@serenityescapespa.ie</p>
+
+    </div>
+
+
 </div>
 
 <!-- book_now.html content ends here -->

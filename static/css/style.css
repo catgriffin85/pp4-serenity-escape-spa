@@ -1,6 +1,6 @@
 * {
     font-family: "Ysabeau Infant", sans-serif;
-    color: #3c3c3f;
+    color: #1c1c1f;
 }
 
 body {
@@ -102,4 +102,29 @@ body {
 .page-link {
     background-color:  rgb(248, 243, 238);;
     color: #3c3c3f;
+}
+
+/* Book Now Page */
+
+.booking-form {
+    background-color:  rgb(248, 243, 238);
+    padding: 1%;
+}
+
+.book-app-heading {
+    font-weight: 650;
+}
+
+.about-us-heading {
+    font-weight: 650;
+}
+
+.info {
+    color: rgb(201, 139, 5);
+}
+
+.about-us {
+    background-color:  rgb(248, 243, 238);
+    font-size: large;
+    padding: 1.5%;
 }
