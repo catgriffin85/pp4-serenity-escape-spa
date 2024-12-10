@@ -2,15 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic
-from .models import Appointment, BookAppointment
+from .models import Appointment
 from treatments.models import Treatment
 from .forms import AppointmentForm
-
-# Create your views here.
-#class BookApp(generic.ListView):
-#    queryset = Appointment.objects.all().order_by("appointment_date")
-#    template_name = "book_now.html"
-#    context_object_name = "book_now"
 
 
 @login_required
@@ -22,18 +16,18 @@ def book_appointment(request):
             appointment.user = request.user
 
             # Check for existing appointments
-            existing_appointments = appointment_form.Meta.model.objects.filter(
-                date=appointment.date, time=appointment.time
-            ).count()
-            if existing_appointments >= 2:
-                messages.error(request, "This time is fully booked. Please try another time.")
+            if Appointment.objects.filter(
+                appointment_date=appointment.appointment_date,
+                appointment_time=appointment.appointment_time
+            ).exists():
+                messages.error(request, "This time is fully booked. Please choose another time")
             else:
                 appointment.save()
                 messages.success(request, "Appointment booked successfully!")
-                return redirect('list_appointments')  
+                return redirect('list_appointments.html')  
         else:
             # Form is invalid; show errors in the template
-            print("Form errors:", appointment_form.errors)
+            messages.error(request, "There was an error with your booking. Please try again.")
 
     else:
         # Initialize form for GET request
