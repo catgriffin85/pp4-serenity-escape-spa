@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 <div class="container list-appointments">
     {% if messages %}
@@ -12,7 +13,7 @@
     <p>Thank you for choosing Serenity Escape Spa. Please see below a list of your appointments.</p>
     <ul>
         {% for appointment in appointments %}
-        <li>{{ appointment.treatment.name }} on {{ appointment.date }} at {{ appointment.time }}</li>
+        <li>{{ appointment.treatment_selected }} on {{ appointment.appointment_date }} at {{ appointment.appointment_time }}</li>
         {% endfor %}
     </ul>
 </div>

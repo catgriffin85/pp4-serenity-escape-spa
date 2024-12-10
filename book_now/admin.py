@@ -6,7 +6,7 @@ from datetime import time
 @admin.register(Appointment)
 class AppointmentAdmin(SummernoteModelAdmin):
 
-    list_display = ('name', 'user', 'treatment_selected')
+    list_display = ('name', 'user', 'treatment_selected', 'appointment_date', 'appointment_time')
     search_fields = ['name']
-    list_filter = ('user',)
+    list_filter = ('appointment_date',)
     summernote_fields = ('content',)
