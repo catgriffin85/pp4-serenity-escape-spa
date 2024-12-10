@@ -5,6 +5,8 @@
 {% block content %}
 
 <!-- book_now.html content starts here -->
+<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <div class="container">
     <div class="booking-form">
@@ -22,7 +24,7 @@
             {% endfor %}
         </ul>
     {% endif %}
-    
+
     <form method="post">
         {% csrf_token %}
         {{ appointment_form | crispy }}
@@ -45,6 +47,12 @@
 
 
 </div>
-
+<script>
+    // Initialize Flatpickr
+    flatpickr("#datepicker", {
+        minDate: "today",  // Disable past dates
+        dateFormat: "Y-m-d",  // Match the Django date format
+    });
+</script>
 <!-- book_now.html content ends here -->
 {% endblock %}
