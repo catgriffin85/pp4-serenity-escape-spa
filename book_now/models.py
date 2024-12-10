@@ -27,7 +27,7 @@ class Appointment(models.Model):
     treatment_selected = models.ForeignKey('treatments.Treatment', on_delete=models.CASCADE, related_name="appointments")
     appointment_date = models.DateField()
     appointment_time = models.CharField(max_length=5, choices=TIMESLOT_CHOICES)
-    requests = models.CharField(max_length=200)
+    requests = models.CharField(max_length=200, null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
