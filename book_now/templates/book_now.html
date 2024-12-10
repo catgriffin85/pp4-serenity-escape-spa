@@ -14,11 +14,21 @@
     {% else %}
     <p class="text-start m-3">You are not logged in, please login to book an appointment.</p>
     {% endif %}
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="alert {{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
     <form method="post">
         {% csrf_token %}
         {{ appointment_form | crispy }}
         <button type="submit" class="btn book-btn">Book Now</button>
     </form>
+    
     </div>
     <br>
         <div class="about-us">

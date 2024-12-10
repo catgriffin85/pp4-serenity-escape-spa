@@ -24,7 +24,7 @@ def book_appointment(request):
             else:
                 appointment.save()
                 messages.success(request, "Appointment booked successfully!")
-                return redirect('list_appointments.html')  
+                return redirect('list_appointments')  
         else:
             # Form is invalid; show errors in the template
             messages.error(request, "There was an error with your booking. Please try again.")
@@ -37,8 +37,6 @@ def book_appointment(request):
     return render(request, 'book_now.html', {'appointment_form': appointment_form})
 
 
-
-@login_required
 def list_appointments(request):
     appointments = Appointment.objects.filter(user=request.user)
-    return render(request, 'book_now/list_appointments.html', {'appointment': appointment})
+    return render(request, 'list_appointments.html', {'appointments': appointments})
