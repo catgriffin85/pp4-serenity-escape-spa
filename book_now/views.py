@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic
+from django.http import HttpResponseRedirect
 from .models import Appointment
 from treatments.models import Treatment
 from .forms import AppointmentForm
@@ -38,5 +39,18 @@ def book_appointment(request):
 
 
 def list_appointments(request):
+    appointments = Appointment.objects.filter(user=request.user)
+    return render(request, 'list_appointments.html', {'appointments': appointments})
+
+
+@login_required
+def list_appointments(request):
+    if request.method == 'POST':
+        booking_id = request.POST.get('booking_id')
+        if booking_id:
+            appointment = get_object_or_404(Appointment, booking_id=booking_id, user=request.user)
+            appointment.delete()
+            messages.success(request, "Appointment cancelled successfully!")
+
     appointments = Appointment.objects.filter(user=request.user)
     return render(request, 'list_appointments.html', {'appointments': appointments})

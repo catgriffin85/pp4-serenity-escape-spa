@@ -95,7 +95,7 @@ body {
     padding: 0, 0, 1, 0;
 }
 
-.book-btn {
+.book-now {
     background-color: rgb(240, 196, 102);
 }
 
@@ -156,5 +156,15 @@ body {
 .list-appointments {
     background-color:  rgb(248, 243, 238);
     font-size: large;
-    padding: 1.5%;
+    padding: 2%;
+}
+
+button.book-btn {
+    background-color: rgb(240, 196, 102);
+}
+
+button.cancel-btn {
+    background-color:  rgba(240, 216, 192, 0.966);
+    font-size: 15px;
+    padding: 0.2rem;
 }
