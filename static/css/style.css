@@ -104,6 +104,12 @@ body {
     color: #3c3c3f;
 }
 
+.page-link:hover {
+    background-color: rgb(243, 210, 139);
+    color: rgb(248, 243, 238);;
+}
+
+
 /* Book Now Page */
 
 .booking-form {
@@ -113,6 +119,10 @@ body {
 
 .book-app-heading {
     font-weight: 650;
+}
+
+button.book-btn {
+    background-color: rgb(240, 196, 102);
 }
 
 .about-us-heading {
@@ -159,7 +169,7 @@ body {
     padding: 2%;
 }
 
-button.book-btn {
+a.book-new {
     background-color: rgb(240, 196, 102);
 }
 
