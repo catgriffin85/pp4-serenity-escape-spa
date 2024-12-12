@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 from treatments.models import Treatment
 from datetime import time
 
@@ -20,6 +21,7 @@ TIMESLOT_CHOICES = [
     ("20:00", "08:00 PM"),
 ]
 
+
 class Appointment(models.Model):
     booking_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
@@ -35,3 +37,17 @@ class Appointment(models.Model):
 
     def __str__(self):
         return f"{self.booking_id}/{self.name} - {self.treatment_selected} at {self.appointment_time} on {self.appointment_date}"
+
+
+class Review(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reviewer")
+    name = models.CharField(max_length=50)
+    treatment_review = models.ForeignKey('treatments.Treatment', on_delete=models.CASCADE, related_name="treatment_review")
+    score = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    review = models.CharField(max_length=250)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['created_on']
+
+    
