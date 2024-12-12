@@ -10,30 +10,32 @@
 
 <div class="container">
     <div class="booking-form">
-    <h2 class="book-app-heading">Book an Appointment</h2>
-    {% if user.is_authenticated %}
-    <p class="text-start m-3">You are logged in as {{ user }}</p>
-    {% else %}
-    <p class="text-start m-3">You are not logged in, please login to book an appointment.</p>
-    {% endif %}
+        <h2 class="book-app-heading">Book an Appointment</h2>
+        {% if user.is_authenticated %}
+        <p class="text-start m-3">You are logged in as {{ user }}</p>
+        {% else %}
+        <p class="text-start m-3">You are not logged in, please login to book an appointment.</p>
+        {% endif %}
 
-    {% if messages %}
+        {% if messages %}
         <ul class="messages">
             {% for message in messages %}
             <li class="alert {{ message.tags }}">{{ message }}</li>
             {% endfor %}
         </ul>
-    {% endif %}
+        {% endif %}
 
-    <form method="post">
-        {% csrf_token %}
-        {{ appointment_form | crispy }}
-        <button type="submit" class="btn book-btn">Book New Appointment</button> <a href="{% url 'list_appointments' %}" class="btn btn-md active treatment-btn" role="button" aria-pressed="true">View Existing Appointments</a>
-    </form>
-    
+        <form method="post" class="col-md-6 about-us">
+            {% csrf_token %}
+            {{ appointment_form | crispy }}
+            <button type="submit" class="btn book-btn">Book New Appointment</button> <a
+                href="{% url 'list_appointments' %}" class="btn btn-md active treatment-btn" role="button"
+                aria-pressed="true">View Existing Appointments</a>
+        </form>
+
     </div>
     <br>
-        <div class="about-us">
+    <div class="col-md-12 mb-6  mt-6 about-us">
         <h3 class="about-us-heading">About us</h3>
         <br>
         <p class="info"><i class="fa-solid fa-location-dot info"></i> Find Us</p>
@@ -42,10 +44,8 @@
         <p class="details"> (065) 605 123</p>
         <p class="info"><i class="fa-solid fa-envelope info"></i> Email Us</p>
         <p class="details"> relax@serenityescapespa.ie</p>
-
     </div>
-
-
+</div>
 </div>
 <script>
     // Initialize Flatpickr

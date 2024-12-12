@@ -1,5 +1,6 @@
 from django import forms
-from .models import Appointment, TIMESLOT_CHOICES
+from .models import Appointment, TIMESLOT_CHOICES, Review
+from django.contrib.auth.decorators import login_required
 from treatments.models import Treatment
 from datetime import date
 
@@ -48,3 +49,9 @@ class AppointmentForm(forms.ModelForm):
             raise forms.ValidationError(f"Appointments cannot be booked on {selected_date}. Please pick another date.")
 
         return selected_date
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ["name", "treatment_review", "score", "review"]

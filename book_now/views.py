@@ -3,9 +3,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic
 from django.http import HttpResponseRedirect
-from .models import Appointment
+from .models import Appointment, Review
 from treatments.models import Treatment
-from .forms import AppointmentForm
+from .forms import AppointmentForm, ReviewForm
+
 
 
 @login_required
@@ -54,3 +55,29 @@ def list_appointments(request):
 
     appointments = Appointment.objects.filter(user=request.user)
     return render(request, 'list_appointments.html', {'appointments': appointments})
+
+
+@login_required
+def customer_review(request):
+    
+    if request.method == "POST":
+        review_form = ReviewForm(request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.user = request.user
+            review.save()
+            messages.success(request, "Thank you for your review.")
+            review_form = ReviewForm()
+        
+        else:
+            messages.error(request, "There was an error with your review. Please try again.")
+    
+    else:
+        review_form = ReviewForm()
+        
+    return render(request, 'review.html', 
+    {
+        'review_form': review_form
+    }
+)
+
