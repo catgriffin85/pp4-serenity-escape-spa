@@ -32,6 +32,41 @@
     
         <a href="{% url 'treatments' %}" class="btn btn-md active treatment-btn" role="button" aria-pressed="true">View our Treatments</a>
 </div>
+<br>
+<div class="customer-reviews">
+    <h4>See what our customers say about us:</h4>
+    <br>
+    <div class="review-list">
+    {% if reviews %}
+        {% for review in reviews %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3 class="card-title">{{ review.score }}/5</h3>
+                    <hr />
+                    <p class="card-text text-muted h6">{{ review.review }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No reviews</p>
+    {% endif %}        
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Previous</a>
+            </li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> More &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 
 <!-- homepage.html content ends here -->
 {% endblock %}

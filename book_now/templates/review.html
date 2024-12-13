@@ -5,6 +5,7 @@
 {% block content %}
 
 <!-- review.html content starts here -->
+
 <body>
     <div class="container">
         {% if messages %}
@@ -23,9 +24,14 @@
                 <button type="submit" class="btn treatment-btn">Submit Review</button>
             </form>
             <br>
-            <a href="{% url 'list_appointments' %}" class="btn book-new" role="button" aria-pressed="true">Return to your appointments.</a>
-        </div> 
+            <a href="{% url 'list_appointments' %}" class="btn book-new" role="button" aria-pressed="true">Return to
+                your appointments.</a>
+        </div>
     </div>
+    <br>
+    
+
 </body>
 <!-- review.html content ends here -->
+
 {% endblock %}

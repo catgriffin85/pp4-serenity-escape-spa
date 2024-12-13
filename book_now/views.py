@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic
+from django.templatetags.static import static
 from django.http import HttpResponseRedirect
 from .models import Appointment, Review
 from treatments.models import Treatment
@@ -75,9 +76,5 @@ def customer_review(request):
     else:
         review_form = ReviewForm()
         
-    return render(request, 'review.html', 
-    {
-        'review_form': review_form
-    }
+    return render(request, 'review.html', {'review_form': review_form}
 )
-

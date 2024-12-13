@@ -49,5 +49,8 @@ class Review(models.Model):
 
     class Meta:
         ordering = ['created_on']
+    
+    def __str__(self):
+        return f"{self.score}/5 - {self.review}"
 
     
