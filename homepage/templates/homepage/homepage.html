@@ -5,68 +5,69 @@
 
 <!--homepage.html content starts here -->
 <div class="image-container">
-    <img src="{% static 'images/hot-stone-image.jpg' %}"
-        alt="background image">
+    <img src="{% static 'images/hot-stone-image.jpg' %}" alt="background image">
 </div>
 <div class="container-fluid">
     <h2 class="main-heading">Welcome to Serenity Escape Spa</h2>
-    <p class="welcome">Indulge yourself at Serenity Escape Spa where we offer a complete suite of relaxation and personal care packages</p>
+    <p class="welcome">Indulge yourself at Serenity Escape Spa where we offer a complete suite of relaxation and
+        personal care packages</p>
 </div>
 <br>
 <div class="introduction">
-    <p>Step into a world where tranquility meets luxury at Serenity Escape Spa, your ultimate retreat for relaxation, rejuvenation, and self-care. 
-        Nestled in a serene setting, our spa is thoughtfully designed to provide an oasis of calm in the midst of life's busy rhythms.
-        At Serenity Escape Spa, we believe in the art of holistic well-being. From our soothing massages to revitalizing facials and indulgent body treatments, 
-        each service is carefully curated to restore balance to your mind, body, and spirit. Our highly skilled therapists 
-        and estheticians use premium products and tailor each experience to meet your unique needs, ensuring you leave feeling refreshed and renewed.        
-        Whether you're seeking a moment of peace, a luxurious escape, or an opportunity to enhance your wellness journey, 
-        Serenity Escape Spa offers a haven where relaxation knows no bounds. Immerse yourself in the gentle sounds, calming aromas, 
-        and warm ambiance that make every visit a transformative experience.        
-        Discover the perfect harmony of comfort and care at Serenity Escape Spa – because you deserve nothing less than the best. Your escape begins here.</p>
+    <p>Step into a world where tranquility meets luxury at Serenity Escape Spa, your ultimate retreat for relaxation,
+        rejuvenation, and self-care.
+        Nestled in a serene setting, our spa is thoughtfully designed to provide an oasis of calm in the midst of life's
+        busy rhythms.
+        At Serenity Escape Spa, we believe in the art of holistic well-being. From our soothing massages to revitalizing
+        facials and indulgent body treatments,
+        each service is carefully curated to restore balance to your mind, body, and spirit. Our highly skilled
+        therapists
+        and estheticians use premium products and tailor each experience to meet your unique needs, ensuring you leave
+        feeling refreshed and renewed.
+        Whether you're seeking a moment of peace, a luxurious escape, or an opportunity to enhance your wellness
+        journey,
+        Serenity Escape Spa offers a haven where relaxation knows no bounds. Immerse yourself in the gentle sounds,
+        calming aromas,
+        and warm ambiance that make every visit a transformative experience.
+        Discover the perfect harmony of comfort and care at Serenity Escape Spa – because you deserve nothing less than
+        the best. Your escape begins here.</p>
 </div>
 <br>
 <div class="intro-treatments">
     <img class="intro-image" src="{% static 'images/spa-1.jpg' %}" alt="oil-image">
-    <p>Experience the epitome of relaxation and rejuvenation—browse our extensive collection of luxurious spa treatments here, 
+    <p>Experience the epitome of relaxation and rejuvenation—browse our extensive collection of luxurious spa treatments
+        here,
         and find the perfect way to unwind, refresh, and revitalize your body and mind</p>
-    
-        <a href="{% url 'treatments' %}" class="btn btn-md active treatment-btn" role="button" aria-pressed="true">View our Treatments</a>
+
+    <a href="{% url 'treatments' %}" class="btn btn-md active treatment-btn" role="button" aria-pressed="true">View our
+        Treatments</a>
 </div>
 <br>
 <div class="customer-reviews">
-    <h4>See what our customers say about us:</h4>
-    <br>
-    <div class="review-list">
-    {% if reviews %}
+    <h3>See what our customers say about us:</h3>
+    <ul>
         {% for review in reviews %}
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h3 class="card-title">{{ review.score }}/5</h3>
-                    <hr />
-                    <p class="card-text text-muted h6">{{ review.review }}</p>
-                </div>
-            </div>
-        </div>
+        <li class="homepage-review">
+            <strong>{{ review.score }}/5</strong>
+            <br>
+            {{ review.review }}
+        </li>
         {% endfor %}
-    {% else %}
-        <p>No reviews</p>
-    {% endif %}        
+    </ul>
+</div>
+{% if is_paginated %}
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li>
-                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Previous</a>
-            </li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> More &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+{% endif %}
 
 <!-- homepage.html content ends here -->
 {% endblock %}
