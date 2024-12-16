@@ -1,6 +1,7 @@
 * {
     font-family: "Ysabeau Infant", sans-serif;
     color: #1c1c1f;
+    box-sizing: border-box;
 }
 
 body {
@@ -47,6 +48,7 @@ body {
 .container-fluid {
     text-align: center;
     background-color: rgb(247, 236, 223);
+    
 }
 
 .main-heading {
@@ -66,6 +68,7 @@ body {
 }
 
 .intro-treatments {
+    display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -77,6 +80,7 @@ body {
 }
 
 .intro-treatments img {
+    align-items: center;
     object-position: center;
     width: 80%;
     height: auto;
@@ -135,9 +139,10 @@ body {
 /* Book Now Page */
 
 .container {
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
-    margin: auto;
-    width: 50%;
+    height: 100%;
 }
 
 .booking-form {
@@ -198,9 +203,8 @@ button.book-btn {
     background-color: rgb(248, 243, 238);
     font-size: large;
     text-align: left;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding: 2%;
+    padding: 1%;
+
 }
 
 li {
@@ -231,23 +235,17 @@ button.cancel-btn {
     font-size: medium;
 }
 
-/* Media queries on screens less than 600px */
+/* Media queries on screens less than 1000px */
 @media screen and (max-width: 1000px) {
 
-    .intro-treatments {
-        align-items: center;
-        width: 90%;
-        margin: 0;
+    .container .intro-treatments {
+        align-items: center !important;
+        width: 90% !important;
+        margin: 5% !important;
     }
 
     .review-display {
         width: 90%;
         margin: 0;
-    }
-
-    .container {
-        padding: 1rem;
-        margin: 0;
-        width: 90%;
     }
 }
