@@ -244,4 +244,10 @@ button.cancel-btn {
         width: 90%;
         margin: 0;
     }
+
+    .container {
+        padding: 1rem;
+        margin: 0;
+        width: 90%;
+    }
 }

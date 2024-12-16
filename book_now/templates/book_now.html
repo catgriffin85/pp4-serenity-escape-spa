@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <div class="container">
-    <div class="booking-form">
+    <div class="col-md-12 mb-6 mt-6 booking-form">
         <h2 class="book-app-heading">Book an Appointment</h2>
         {% if user.is_authenticated %}
         <p class="text-start m-3">You are logged in as {{ user }}</p>
@@ -25,7 +25,7 @@
         </ul>
         {% endif %}
 
-        <form method="post" class="col-md-10 about-us">
+        <form method="post" class="col-md-10 mb-6 mt-6 about-us">
             {% csrf_token %}
             {{ appointment_form | crispy }}
             <button type="submit" class="btn book-btn">Book New Appointment</button>
