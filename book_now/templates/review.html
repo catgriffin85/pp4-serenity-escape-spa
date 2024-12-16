@@ -16,8 +16,8 @@
         </ul>
         {% endif %}
         <div class="col-md-12 mb-6  mt-6 about-us">
-            <h4>We would appreciate your feedback on our services:</h4>
-            <p>Reviewing as: {{ user.username }}</p>
+            <h4>Thank you so much for taking the time to share your feedback! We truly appreciate it.</h4>
+            <p class="review-username">Reviewing as: {{ user.username }}</p>
             <form method="post">
                 {% csrf_token %}
                 {{ review_form | crispy }}
@@ -29,7 +29,7 @@
         </div>
     </div>
     <br>
-    
+
 
 </body>
 <!-- review.html content ends here -->

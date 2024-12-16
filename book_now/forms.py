@@ -17,6 +17,13 @@ class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
         fields = ["name", "treatment_selected", "appointment_date", "appointment_time", "requests"]
+        labels = {
+            "name": "Your Name:",
+            "treatment_selected": "Select a treatment:",
+            "appointment_date": "Choose your preferred date:",
+            "appointment_time": "Choose your preferred time:",
+            "requests": "Please outline any special requests or any information we should be aware of:",
+        }
     
     def clean_appointment_date(self):
         selected_date = self.cleaned_data.get("appointment_date")
@@ -55,3 +62,9 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ["name", "treatment_review", "score", "review"]
+        labels = {
+            "name": "Your name:",
+            "treatment_review": "Select a treatment:",
+            "score": "How would you score our service out of 5?",
+            "review": "Please leave your review:",
+        }
