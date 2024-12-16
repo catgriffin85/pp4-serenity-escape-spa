@@ -12,5 +12,5 @@ def homepage_view(request):
         )
 
 def homepage_view(request):
-    reviews = Review.objects.all().order_by('created_on')[:5]
+    reviews = Review.objects.filter(approved=True).order_by('-created_on')[:3]
     return render(request, 'homepage/homepage.html', {'reviews': reviews})
