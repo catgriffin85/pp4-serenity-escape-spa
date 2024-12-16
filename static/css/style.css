@@ -64,26 +64,36 @@ body {
     padding-right: 10%;
 }
 
-.intro-treatments img {
-    object-position: center;
-    width: 50%;
-    height: 30%;
-    max-width: 80%;
-    max-height: 60%;
-    left: 0;
-    margin: 0;
-    padding: 0;
-}
 .intro-treatments {
+    align-items: center;
     text-align: center;
+    justify-content: center;
     background-color:  rgb(248, 243, 238);
     padding: 1rem;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin: auto;
+    width: 50%;
+    font-size: larger;
+}
+
+.intro-treatments img {
+    object-position: center;
+    width: 80%;
+    height: auto;
+    max-width: 100%;
 }
 
 .treatment-btn {
     background-color: rgb(240, 196, 102);
+}
+
+.review-display {
+    align-items: center;
+    text-align: center;
+    background-color:  rgb(248, 243, 238);
+    padding: 1rem;
+    margin: auto;
+    width: 50%;
+    font-size: larger;
 }
 
 /* Treatments Page */
@@ -120,6 +130,11 @@ body {
 
 /* Book Now Page */
 
+.container {
+    padding: 1rem;
+    margin: auto;
+    width: 50%;
+}
 
 .booking-form {
     background-color:  rgb(248, 243, 238);
@@ -144,7 +159,7 @@ button.book-btn {
 
 .about-us {
     background-color:  rgb(248, 243, 238);
-    font-size: large;
+    font-size: larger;
     padding: 1.5%;
 }
 
@@ -203,4 +218,19 @@ button.cancel-btn {
     padding: 1rem;
     margin-left: 30%;
     margin-right: 30%;
+}
+
+/* Media queries on screens less than 600px */
+@media screen and (max-width: 1000px) {
+
+    .intro-treatments {
+        align-items: center;
+        width: 90%;
+        margin: 0;
+    }
+
+    .review-display {
+        width: 90%;
+        margin: 0;
+    }
 }

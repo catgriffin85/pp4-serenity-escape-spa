@@ -4,10 +4,11 @@
 {% block content %}
 
 <!--homepage.html content starts here -->
+<div class="container-fluid">
 <div class="image-container">
     <img src="{% static 'images/hot-stone-image.jpg' %}" alt="background image">
 </div>
-<div class="container-fluid">
+<div>
     <h2 class="main-heading">Welcome to Serenity Escape Spa</h2>
     <p class="welcome">Indulge yourself at Serenity Escape Spa where we offer a complete suite of relaxation and
         personal care packages</p>
@@ -43,8 +44,8 @@
         Treatments</a>
 </div>
 <br>
-<div class="customer-reviews">
-    <h3>See what our customers say about us:</h3>
+<div class="review-display">
+    <h3>See what our happy customers have to say about their experience with us!</h3>
     <ul>
         {% for review in reviews %}
         <li class="homepage-review">
@@ -55,19 +56,8 @@
         {% endfor %}
     </ul>
 </div>
-{% if is_paginated %}
-    <div class="pagination">
-        {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-        {% endif %}
-
-        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">Next</a>
-        {% endif %}
-    </div>
-{% endif %}
+</div>
+</div>
 
 <!-- homepage.html content ends here -->
 {% endblock %}
