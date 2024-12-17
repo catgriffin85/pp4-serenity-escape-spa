@@ -58,6 +58,7 @@ def list_appointments(request):
     return render(request, 'list_appointments.html', {'appointments': appointments})
 
 
+
 @login_required
 def customer_review(request):
     
