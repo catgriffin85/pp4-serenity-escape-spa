@@ -49,10 +49,20 @@
 </div>
 </div>
 <script>
-    // Initialize Flatpickr
+    // Ensure blocked_dates is properly rendered as a JS array
+    var blockedDates = {{ blocked_dates|safe }};
+
+    console.log(blockedDates); // Verify the output in browser console
+
     flatpickr("#datepicker", {
-        minDate: "today",  // Disable past dates
-        dateFormat: "Y-m-d",  // Match the Django date format
+        minDate: "today",
+        dateFormat: "Y-m-d",
+        disable: [
+            ...blockedDates, // Spread operator to include dates
+            function (date) {
+                return date.getDay() === 0; // Disable all Sundays
+            }
+        ]
     });
 </script>
 <!-- book_now.html content ends here -->

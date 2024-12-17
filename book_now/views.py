@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 from .models import Appointment, Review
 from treatments.models import Treatment
 from .forms import AppointmentForm, ReviewForm
-
+from datetime import date
 
 
 @login_required
@@ -57,6 +57,61 @@ def list_appointments(request):
     appointments = Appointment.objects.filter(user=request.user)
     return render(request, 'list_appointments.html', {'appointments': appointments})
 
+
+def book_appointment(request):
+    appointment_form = AppointmentForm(request.POST or None)
+    
+    # Blocked dates same as form
+    blocked_dates = [
+        date(2024, 12, 24),
+        date(2024, 12, 25),
+        date(2024, 12, 26),
+        date(2024, 12, 31),
+        date(2025, 1, 1),
+        date(2025, 2, 3),
+        date(2025, 3, 17),
+        date(2025, 4, 21),
+        date(2025, 5, 5),
+        date(2025, 6, 2),
+        date(2025, 8, 4),
+        date(2025, 10, 27),
+        date(2025, 12, 24),
+        date(2025, 12, 25),
+        date(2025, 12, 26),
+        date(2025, 12, 31),
+    ]
+  
+    # Convert to a list of strings in YYYY-MM-DD format for Flatpickr
+    blocked_dates_str = [d.isoformat() for d in blocked_dates]
+    
+    if request.method == 'POST':
+        if appointment_form.is_valid():
+            appointment = appointment_form.save(commit=False)
+            appointment.user = request.user
+
+            # Check for existing appointments
+            if Appointment.objects.filter(
+                appointment_date=appointment.appointment_date,
+                appointment_time=appointment.appointment_time
+            ).exists():
+                messages.error(request, "This time is fully booked. Please choose another time")
+            else:
+                appointment.save()
+                messages.success(request, "Appointment booked successfully!")
+                return redirect('list_appointments')  
+        else:
+            # Form is invalid; show errors in the template
+            messages.error(request, "There was an error with your booking. Please try again.")
+
+    else:
+        # Initialize form for GET request
+        appointment_form = AppointmentForm()
+
+    # Render form for both invalid POST and GET requests
+    return render(request, 'book_now.html', {
+        'appointment_form': appointment_form,
+        'blocked_dates': blocked_dates_str,
+    })
 
 
 @login_required
