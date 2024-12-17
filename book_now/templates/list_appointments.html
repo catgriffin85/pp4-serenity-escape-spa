@@ -20,14 +20,12 @@
             <h3>Thank you for choosing Serenity Escape Spa. Here is your appointment history.</h3>
 
             <br>
-            <div class="cancel-app">
+            <div class="change-app">
                 {% for appointment in appointments %}
                 <li>Booking ID: {{ appointment.booking_id }} - {{ appointment.treatment_selected }} on {{ appointment.appointment_date }} 
                     at {{ appointment.appointment_time }}</li>
                 <button type="button" class="btn cancel-btn" data-bs-toggle="modal"
-                    data-bs-target="#confirmCancelModal{{ appointment.booking_id }}">Cancel Appointment</button>
-                <br>
-                
+                    data-bs-target="#confirmCancelModal{{ appointment.booking_id }}">Cancel Appointment</button> <a href="{% url 'edit_appointment' appointment.booking_id %}" class="btn update-btn">Update Appointment</a>                
                 <hr>
                 <br>
 

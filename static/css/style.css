@@ -219,6 +219,16 @@ button.cancel-btn {
     padding: 0.2rem;
 }
 
+a.update-btn {
+    background-color: rgba(240, 216, 192, 0.966);
+    font-size: 15px;
+    padding: 0.2rem;
+}
+
+button.save-changes {
+    background-color:  rgba(240, 216, 192, 0.966);
+}
+
 /* Reviews Page */
 
 .customer-reviews {

@@ -46,6 +46,27 @@ def list_appointments(request):
 
 
 @login_required
+def edit_appointment(request, booking_id):
+    # Ensure the appointment belongs to the current user
+    appointment = get_object_or_404(Appointment, booking_id=booking_id, user=request.user)
+    
+    if request.method == "POST":
+        # Bind the request POST data to the existing appointment instance
+        form = AppointmentForm(request.POST, instance=appointment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your appointment has been successfully updated!")
+            return redirect('list_appointments')
+        else:
+            messages.error(request, "There was an error updating your appointment. Please try again.")
+    else:
+        # Populate the form with the existing appointment data
+        form = AppointmentForm(instance=appointment)
+    
+    return render(request, 'edit_appointment.html', {'form': form, 'appointment': appointment})
+
+
+@login_required
 def list_appointments(request):
     if request.method == 'POST':
         booking_id = request.POST.get('booking_id')
