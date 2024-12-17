@@ -124,7 +124,6 @@ body {
 
 .page-link {
     background-color: rgb(248, 243, 238);
-    ;
     color: #3c3c3f;
 }
 
@@ -233,6 +232,15 @@ button.cancel-btn {
 .review-username {
     font-size: medium;
 }
+
+/* Auth Pages */
+
+.auth-btn {
+        background-color: rgba(240, 216, 192, 0.966);
+        font-size: 15px;
+        padding: 0.2rem;
+}
+
 
 /* Media queries on screens less than 1000px */
 @media screen and (max-width: 1000px) {
