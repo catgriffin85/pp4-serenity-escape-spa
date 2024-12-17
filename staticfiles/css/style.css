@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(247, 236, 223);
+    background-color: rgb(247, 236, 223) !important;
 }
 
 .footer {
@@ -68,7 +68,6 @@ body {
 }
 
 .intro-treatments {
-    display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -125,7 +124,6 @@ body {
 
 .page-link {
     background-color: rgb(248, 243, 238);
-    ;
     color: #3c3c3f;
 }
 
@@ -221,6 +219,16 @@ button.cancel-btn {
     padding: 0.2rem;
 }
 
+a.update-btn {
+    background-color: rgba(240, 216, 192, 0.966);
+    font-size: 15px;
+    padding: 0.2rem;
+}
+
+button.save-changes {
+    background-color:  rgba(240, 216, 192, 0.966);
+}
+
 /* Reviews Page */
 
 .customer-reviews {
@@ -234,6 +242,15 @@ button.cancel-btn {
 .review-username {
     font-size: medium;
 }
+
+/* Auth Pages */
+
+.auth-btn {
+        background-color: rgba(240, 216, 192, 0.966);
+        font-size: 15px;
+        padding: 0.2rem;
+}
+
 
 /* Media queries on screens less than 1000px */
 @media screen and (max-width: 1000px) {
