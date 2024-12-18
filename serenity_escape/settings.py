@@ -102,8 +102,17 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
-    "https://*.herokuapp.com"
+    "https://*.herokuapp.com",
 ]
+
+
+CSRF_COOKIE_SECURE = True  # Ensure the CSRF cookie is sent over HTTPS
+CSRF_COOKIE_HTTPONLY = True  # Prevent access to CSRF cookie via JavaScript
+
+
+#RECAPTCHA_PUBLIC_KEY = '6Lcp3J8qAAAAAJgbRu4Qh1aC13f6QhS_8yvbiRqd'
+#RECAPTCHA_PRIVATE_KEY = '6Lcp3J8qAAAAAGrjFWzq2n_1WJaE1pgyGMU9VfA2'
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

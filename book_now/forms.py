@@ -5,6 +5,7 @@ from treatments.models import Treatment
 from datetime import date
 
 class AppointmentForm(forms.ModelForm):
+    
     appointment_date = forms.DateField(
         widget=forms.TextInput(attrs={
             'id': 'datepicker', 
@@ -14,6 +15,7 @@ class AppointmentForm(forms.ModelForm):
     )
     appointment_time = forms.ChoiceField(choices=TIMESLOT_CHOICES, label="Select a Time")
 
+    
     class Meta:
         model = Appointment
         fields = ["name", "treatment_selected", "appointment_date", "appointment_time", "requests"]
