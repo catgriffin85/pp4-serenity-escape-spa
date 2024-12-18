@@ -4,6 +4,7 @@
 
 {% block content %}
 
+<!-- book_now.html content starts here -->
 <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
@@ -15,6 +16,7 @@
         {% else %}
         <p class="text-start m-3">You are not logged in, please login to book an appointment.</p>
         {% endif %}
+
         {% if messages %}
         <ul class="messages">
             {% for message in messages %}
@@ -22,18 +24,19 @@
             {% endfor %}
         </ul>
         {% endif %}
+
         <form method="post" class="col-md-10 mb-6 mt-6 about-us">
             {% csrf_token %}
-            {{ appointment_form|crispy }}
+            {{ appointment_form | crispy }}
             <button type="submit" class="btn book-btn">Book New Appointment</button>
-            <br><br>
+            <br> <br>
             <a href="{% url 'list_appointments' %}" class="btn btn-md active treatment-btn" role="button"
                 aria-pressed="true">View Existing Appointments</a>
         </form>
-    </div>
 
+    </div>
     <br>
-    <div class="col-md-12 mb-6 mt-6 about-us">
+    <div class="col-md-12 mb-6  mt-6 about-us">
         <h3 class="about-us-heading">About us</h3>
         <br>
         <p class="info"><i class="fa-solid fa-location-dot info"></i> Find Us</p>
@@ -43,6 +46,7 @@
         <p class="info"><i class="fa-solid fa-envelope info"></i> Email Us</p>
         <p class="details"> relax@serenityescapespa.ie</p>
     </div>
+</div>
 </div>
 <script>
     flatpickr("#datepicker", {

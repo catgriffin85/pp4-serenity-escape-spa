@@ -9,7 +9,7 @@ from treatments.models import Treatment
 from .forms import AppointmentForm, ReviewForm
 from datetime import date
 
-
+@login_required
 def book_appointment(request):
     appointment_form = AppointmentForm(request.POST or None)
     
