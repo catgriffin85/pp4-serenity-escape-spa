@@ -28,9 +28,9 @@ def book_appointment(request):
                 appointment.save()
                 messages.success(request, "Appointment booked successfully!")
                 return redirect('list_appointments')  
-        else:
+        #else:
             # Form is invalid; show errors in the template
-            messages.error(request, "There was an error with your booking. Please try again.")
+            #messages.error(request, "There was an error with your booking. Please try again.")
 
     else:
         # Initialize form for GET request
