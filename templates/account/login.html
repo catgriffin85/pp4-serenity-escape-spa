@@ -14,9 +14,8 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Log In" %}</h3>
 
-            <p>{% blocktrans %}Welcome to Serenity Escape Spa. To book an appointment, please log in. 
-                If you have not created an account yet, then <a class="link" href="{{ signup_url }}">Sign Up</a>
-                first.{% endblocktrans %}</p>
+            <p>{% blocktrans %}Welcome back to Serenity Escape Spa. To book an appointment, please log in. 
+                {% endblocktrans %}</p>
         </div>
     </div>
     <div class="row">
@@ -29,7 +28,10 @@
                 {% endif %}
                 <button class="btn btn-signup right auth-btn" type="submit">{% trans "Sign In" %}</button>
             </form>
+            <br>
+            If you have not created an account yet, please register <a class="link" href="{{ signup_url }}">here</a>.
         </div>
     </div>
+    
 </div>
 {% endblock %}
