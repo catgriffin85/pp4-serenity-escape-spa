@@ -1,112 +1,105 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Serenity Escape Spa
 
-Welcome Catherine Griffin,
+## Introduction to Serenity Escape Spa Website
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This website is designed to create a relaxing and user-friendly online presence for the Serenity Escape Spa. The website enables users to explore a range of rejuvenating spa services, book appointments effortlessly, and connect with the spa team for any inquiries.
+Whether you’re seeking a tranquil escape or an appointment for a specific service, the Serenity Escape Spa website aims to deliver a seamless digital experience for both clients and administrators.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **April 26, 2024**
+You can view Serenity Escape Spa Website [here] (https://serenity-escape-spa-7cbc127367b8.herokuapp.com/)
 
-## Gitpod Reminders
+Link to admin panel: [here] (https://serenity-escape-spa-7cbc127367b8.herokuapp.com/admin/login/?next=/admin/)
+Admin login: 
+username: catgriffinpp4
+password: Serenity-escape
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Key Features
 
-`python3 -m http.server`
+* <strong>Homepage: </strong> A welcoming introduction to the spa, featuring key highlights and testimonials.
+* <strong>Treatments Page: </strong> A detailed overview of spa services, including descriptions, pricing, and durations.
+* <strong>User login: </strong> Users can register, login and log out to book and view their appointments.
+* <strong>Booking System: </strong> Users can book appointments online by selecting their desired service, date, and time. They can also update their appointment and cancel their apppointments. Admins can manage bookings, update service offerings, and adjust available time slots.
 
-A blue button should appear to click: _Make Public_,
+This project has been developed using Agile methodology, ensuring iterative improvements and a user-focused design.
 
-Another blue button should appear to click: _Open Browser_.
+## Project Goals
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+* To create a website that is easy for users to navigate and use.
+* To create a visually appealing website.
+* Allow users to book and manage their appointments.
+* Have a website that is responsive on all devices.
+* To create an admin panel for a superuser to manage appointments and services.
 
-A blue button should appear to click: _Make Public_,
+## User Stories
 
-Another blue button should appear to click: _Open Browser_.
+### User Story 1: Homepage
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<strong>User Story 1:1</strong>
 
-To log into the Heroku toolbelt CLI:
+As a user, I want to view a visually appealing homepage, so that I can understand the spa's offerings at a glance.
+Acceptance Criteria:
+* Displays a hero image with a welcoming message.
+* Includes navigation links to other pages.
+* Brief description of the spa's unique selling points.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+<strong>User Story 1:2</strong>
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+As a user, I want to see customer reviews, so that I can trust the spa's services.
+Acceptance Criteria:
+* Testimonials section with 2-3 reviews displayed prominently.
+* Option for admin to add/edit/remove reviews.
 
-------
+### User Story 2: Treatment Page
 
-## Release History
+<strong>User Story 2:1</strong>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+As a user, I want to view a list of services, so that I can choose the one that suits me.
+Acceptance Criteria:
+* Each service includes a name, description, duration, and price.
+* Easy-to-navigate layout with clear categories (if needed).
 
-**April 26 2024:** Update node version to 16
+<strong>User Story 2:2</strong>
 
-**September 20 2023:** Update Python version to 3.9.17.
+As an admin, I want to add, edit, or remove services, so that I can keep the services list up-to-date.
+Acceptance Criteria:
+* Admin panel for managing services.
+* Changes are reflected immediately on the services page.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+<strong>User Story 2:3</strong>
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+As a user, I want to create an account, so that I can book an appointment for my preferred service.
+Acceptance Criteria:
+* Option to create a new account.
+* Option to log in for users with an existing account.
+* Option to log out once user has logged in.
+* View of all previously booked appointments once logged in.
+* View of all future appointments once logged in.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+<strong>User Story 2:4</strong>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+As a user, I want to book an appointment online, so that I can schedule a service at my convenience.
+Acceptance Criteria:
+* Booking form allows service selection, date, time, and user details.
+* Confirmation message is displayed to the user upon successful booking.
+* Ability to update and cancel my appointments.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<strong>User Story 2:5</strong>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+As an admin, I want to view all appointments, so that I can manage the spa's schedule efficiently.
+Acceptance Criteria:
+* Admin dashboard displaying upcoming appointments with details.
+* Option to filter by date or service type.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Prioritisation
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+<strong>Must Have (MVP)</strong>
+* Homepage (User Story 1.1)
+* Services Page (User Story 2.1, 2.2)
+* Booking System (User Story 2.4)
+* Admin Panel (User Story 2.5)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<strong>Should Have</strong>
+* Customer Reviews (User Story 1.2)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+<strong>Nice to Have</strong>
+* Contact Us Page
+* About Us Page
