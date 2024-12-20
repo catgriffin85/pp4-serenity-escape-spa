@@ -8,6 +8,8 @@ from .models import Appointment, Review
 from treatments.models import Treatment
 from .forms import AppointmentForm, ReviewForm
 from datetime import date
+from django.http import JsonResponse
+
 
 @login_required
 def book_appointment(request):
@@ -28,15 +30,10 @@ def book_appointment(request):
                 appointment.save()
                 messages.success(request, "Appointment booked successfully!")
                 return redirect('list_appointments')  
-        #else:
-            # Form is invalid; show errors in the template
-            #messages.error(request, "There was an error with your booking. Please try again.")
 
     else:
         # Initialize form for GET request
         appointment_form = AppointmentForm()
-
-    pass
 
     return render(request, 'book_now.html', {
     'appointment_form': appointment_form,

@@ -4,6 +4,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from treatments.models import Treatment
 from datetime import time
 
+
 # Create your models here.
 TIMESLOT_CHOICES = [
     ("08:00", "08:00 AM"),
