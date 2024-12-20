@@ -4,16 +4,16 @@
 {% block content %}
 
 <div class="container">
-<div class="col-md-12 mb-6 mt-6 booking-form">
-    <h2 class="book-app-heading">Update Your Appointment</h2>
-    <br>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+    <div class="col-md-12 mb-6 mt-6 booking-form">
+        <h2 class="book-app-heading">Update Your Appointment</h2>
         <br>
-        <button type="submit" class="btn save-changes">Save Changes</button>
-        <a href="{% url 'list_appointments' %}" class="btn btn-secondary">Cancel</a>
-    </form>
-</div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br>
+            <button type="submit" class="btn save-changes">Save Changes</button>
+            <a href="{% url 'list_appointments' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
 </div>
 {% endblock %}

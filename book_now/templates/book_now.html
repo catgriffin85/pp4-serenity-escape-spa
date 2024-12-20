@@ -28,7 +28,7 @@
         <form method="post" class="col-md-10 mb-6 mt-6 about-us">
             {% csrf_token %}
             {{ appointment_form | crispy }}
-            <button type="submit" class="btn book-btn">Book New Appointment</button>
+            <button type="submit" class="btn book-btn">Book Appointment</button>
             <br> <br>
             <a href="{% url 'list_appointments' %}" class="btn btn-md active treatment-btn" role="button"
                 aria-pressed="true">View Existing Appointments</a>

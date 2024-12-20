@@ -5,17 +5,16 @@
 
 <!-- treatments_page.html content starts here -->
 <div aria-label="treatment-page-login" class="treatment-login">
-        {% if user.is_authenticated %}
-        <p class="text-start m-3">You are logged in as {{ user }}</p>
-        {% else %}
-        <a class="auth-btn {% if request.path == login_url %}active{% endif %}" aria-current="page"
-            href="{% url 'account_login' %}">Log in to book an appointment</a>
-        {% endif %}
-
+    {% if user.is_authenticated %}
+    <p class="text-start m-3"></p>
+    {% else %}
+    <a class="auth-btn {% if request.path == login_url %}active{% endif %}" aria-current="page"
+        href="{% url 'account_login' %}">Log in to book an appointment</a>
+    {% endif %}
 </div>
 <div class="container-fluid">
     {% if is_paginated %}
-    
+
     {% endif %}
     <div class="row">
 
@@ -29,17 +28,16 @@
                             <div class="image-flash">
                                 <h2 class="category">{{ treatment.category }}</h2>
                             </div>
-                                <div class="image-container">
-                                    <img class="card-image" src="{% if treatment.category == 'Facial' %}
+                            <div class="image-container">
+                                <img class="card-image" src="{% if treatment.category == 'Facial' %}
                                                 {% static 'images/facial.jpg' %}
                                             {% elif treatment.category == 'Massage' %}
                                                 {% static 'images/massage.jpg' %}
                                             {% else %}
                                                 {% static 'images/mum-to-be.jpg' %}
-                                            {% endif %}" 
-                                        alt="Category Image">
-                                </div>
-                                <h3 class="card-title">{{ treatment.treatment }}</h3>
+                                            {% endif %}" alt="Category Image">
+                            </div>
+                            <h3 class="card-title">{{ treatment.treatment }}</h3>
                             </a>
 
                             <hr />
@@ -48,7 +46,8 @@
                             <hr />
                             <p class="card-text text-muted h6"><em>{{ treatment.duration }} - {{ treatment.cost }}</em>
                             </p>
-                            <a href="{% url 'book_appointment' %}" class="btn btn-md active book-now" role="button" aria-pressed="true">Book Now</a>
+                            <a href="{% url 'book_appointment' %}" class="btn btn-md active book-now" role="button"
+                                aria-pressed="true">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -66,8 +65,7 @@
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li>
-                <a href="?page={{ page_obj.previous_page_number }}"
-                    class="page-link">&laquo; Previous</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Previous</a>
             </li>
             {% endif %}
             {% if page_obj.has_next %}
