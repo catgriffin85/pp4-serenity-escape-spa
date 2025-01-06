@@ -35,7 +35,14 @@
                                                 {% static 'images/massage.jpg' %}
                                             {% else %}
                                                 {% static 'images/mum-to-be.jpg' %}
-                                            {% endif %}" alt="Category Image">
+                                            {% endif %}" 
+                                    alt="{% if treatment.category == 'Facial' %}
+                                            Woman enjoying a facial image
+                                         {% elif treatment.category == 'Massage' %}
+                                            Woman recieving a massage image
+                                         {% else %}
+                                            Mum-to-be treatment calming image of candels
+                                         {% endif %}">
                             </div>
                             <h3 class="card-title">{{ treatment.treatment }}</h3>
                             </a>
