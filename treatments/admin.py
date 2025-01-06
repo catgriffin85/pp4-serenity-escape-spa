@@ -10,5 +10,3 @@ class TreatmentAdmin(SummernoteModelAdmin):
     list_filter = ('category',)
     summernote_fields = ('content',)
 
-
-# Register your models here.
