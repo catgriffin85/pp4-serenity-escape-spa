@@ -4,7 +4,7 @@
 {% block content %}
 
 <!-- treatments_page.html content starts here -->
-<div aria-label="treatment-page-login" class="treatment-login">
+<div class="treatment-login">
     {% if user.is_authenticated %}
     <p class="text-start m-3"></p>
     {% else %}
@@ -45,12 +45,10 @@
                                          {% endif %}">
                             </div>
                             <h3 class="card-title">{{ treatment.treatment }}</h3>
-                            </a>
-
-                            <hr />
+                            <hr>
                             <p class="card-text text-muted h6">{{ treatment.description }}
                             </p>
-                            <hr />
+                            <hr>
                             <p class="card-text text-muted h6"><em>{{ treatment.duration }} - {{ treatment.cost }}</em>
                             </p>
                             <a href="{% url 'book_appointment' %}" class="btn btn-md active book-now" role="button"
