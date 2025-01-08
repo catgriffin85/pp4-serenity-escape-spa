@@ -13,6 +13,9 @@ from treatments.models import Treatment
 
 @login_required
 def book_appointment(request):
+    """
+    Allows a logged-in user to book an appointment.
+    """
     appointment_form = AppointmentForm(request.POST or None)
 
     if request.method == 'POST':
@@ -43,6 +46,9 @@ def book_appointment(request):
 
 
 def list_appointments(request):
+    """
+    Displays a list of appointments for the logged-in user.
+    """
     appointments = Appointment.objects.filter(user=request.user)
     return render(request, 'list_appointments.html',
                   {'appointments': appointments})
@@ -50,6 +56,9 @@ def list_appointments(request):
 
 @login_required
 def edit_appointment(request, booking_id):
+    """
+    Allows a logged-in user to edit an existing appointment.
+    """
     # Ensure the appointment belongs to the current user
     appointment = get_object_or_404(
         Appointment, booking_id=booking_id, user=request.user)
@@ -76,6 +85,9 @@ def edit_appointment(request, booking_id):
 
 @login_required
 def list_appointments(request):
+    """
+    Displays a list of appointments for the logged-in user and handles appointment cancellations.
+    """
     if request.method == 'POST':
         booking_id = request.POST.get('booking_id')
         if booking_id:
@@ -92,6 +104,9 @@ def list_appointments(request):
 
 @login_required
 def customer_review(request):
+    """
+    Allows a logged-in user to submit a review.
+    """
 
     if request.method == "POST":
         review_form = ReviewForm(request.POST)

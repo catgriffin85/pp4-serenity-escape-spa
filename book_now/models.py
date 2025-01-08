@@ -24,11 +24,16 @@ TIMESLOT_CHOICES = [
 
 
 class Appointment(models.Model):
+    """
+    Represents an appointment for a specific treatment.
+    """
     booking_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                              related_name="customer")
-    treatment_selected = models.ForeignKey('treatments.Treatment', on_delete=models.CASCADE, related_name="appointments")
+    treatment_selected = models.ForeignKey('treatments.Treatment',
+                                           on_delete=models.CASCADE,
+                                           related_name="appointments")
     appointment_date = models.DateField()
     appointment_time = models.CharField(max_length=5, choices=TIMESLOT_CHOICES)
     requests = models.CharField(max_length=200, null=True, blank=True)
@@ -42,6 +47,9 @@ class Appointment(models.Model):
 
 
 class Review(models.Model):
+    """
+    Represents a review for a specific treatment provided by a user.
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                              related_name="reviewer")
     name = models.CharField(max_length=50)
