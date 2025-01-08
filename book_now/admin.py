@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Appointment, Review
 from django_summernote.admin import SummernoteModelAdmin
 from datetime import time
+from .models import Appointment, Review
 
 @admin.register(Appointment)
 class AppointmentAdmin(SummernoteModelAdmin):

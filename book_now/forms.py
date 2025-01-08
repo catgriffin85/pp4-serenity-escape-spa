@@ -1,8 +1,9 @@
 from django import forms
-from .models import Appointment, TIMESLOT_CHOICES, Review
 from django.contrib.auth.decorators import login_required
-from treatments.models import Treatment
+from .models import Appointment, TIMESLOT_CHOICES, Review
 from datetime import date
+from treatments.models import Treatment
+
 
 class AppointmentForm(forms.ModelForm):
     

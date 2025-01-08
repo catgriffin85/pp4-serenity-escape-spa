@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
-from treatments.models import Treatment
 from datetime import time
+from treatments.models import Treatment
 
 
 # Create your models here.
@@ -26,7 +26,8 @@ TIMESLOT_CHOICES = [
 class Appointment(models.Model):
     booking_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="customer")
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name="customer")
     treatment_selected = models.ForeignKey('treatments.Treatment', on_delete=models.CASCADE, related_name="appointments")
     appointment_date = models.DateField()
     appointment_time = models.CharField(max_length=5, choices=TIMESLOT_CHOICES)
@@ -41,18 +42,21 @@ class Appointment(models.Model):
 
 
 class Review(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reviewer")
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name="reviewer")
     name = models.CharField(max_length=50)
-    treatment_review = models.ForeignKey('treatments.Treatment', on_delete=models.CASCADE, related_name="treatment_review")
-    score = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    treatment_review = models.ForeignKey(
+                                         'treatments.Treatment',
+                                         on_delete=models.CASCADE,
+                                         related_name="treatment_review")
+    score = models.IntegerField(validators=[MinValueValidator(1),
+                                MaxValueValidator(5)])
     review = models.CharField(max_length=250)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['created_on']
-    
+
     def __str__(self):
         return f"{self.score}/5 - {self.review}"
-
-    

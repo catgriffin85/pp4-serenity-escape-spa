@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 STATUS = ((0, "Inactive"), (1, "Active"))
 
+
 # Create your models here.
 class Treatment(models.Model):
     category = models.CharField(max_length=200)

@@ -25,13 +25,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY") 
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-catgriffin8-pp4serenity-dmurijy25dc.ws.codeinstitute-ide.net',
-                '.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-catgriffin8-pp4serenity-dmurijy25dc.ws.codeinstitute-ide.net',
+    '.herokuapp.com']
 
 
 # Application definition
@@ -112,22 +113,26 @@ CSRF_COOKIE_SECURE = True  # Ensure the CSRF cookie is sent over HTTPS
 CSRF_COOKIE_HTTPONLY = True  # Prevent access to CSRF cookie via JavaScript
 
 
-#RECAPTCHA_PUBLIC_KEY = '6Lcp3J8qAAAAAJgbRu4Qh1aC13f6QhS_8yvbiRqd'
-#RECAPTCHA_PRIVATE_KEY = '6Lcp3J8qAAAAAGrjFWzq2n_1WJaE1pgyGMU9VfA2'
+# RECAPTCHA_PUBLIC_KEY = '6Lcp3J8qAAAAAJgbRu4Qh1aC13f6QhS_8yvbiRqd'
+# RECAPTCHA_PRIVATE_KEY = '6Lcp3J8qAAAAAGrjFWzq2n_1WJaE1pgyGMU9VfA2'
 
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -152,4 +157,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
