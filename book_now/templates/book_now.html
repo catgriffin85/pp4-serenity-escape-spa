@@ -8,6 +8,7 @@
 <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
+<!-- book_now.html user authentication -->
 <div class="container">
     <div class="col-md-12 mb-6 mt-6 booking-form">
         <h2 class="book-app-heading">Book an Appointment</h2>
@@ -25,6 +26,7 @@
         </ul>
         {% endif %}
 
+        <!-- book_now.html form to allow user to book an appointment -->
         <form method="post" class="col-md-10 mb-6 mt-6 about-us">
             {% csrf_token %}
             {{ appointment_form | crispy }}
@@ -36,6 +38,7 @@
 
     </div>
     <br>
+    <!-- book_now.html section with information about the spa -->
     <div class="col-md-12 mb-6  mt-6 about-us">
         <h3 class="about-us-heading">About us</h3>
         <br>
@@ -59,4 +62,5 @@
         ]
     });
 </script>
+<!-- book_now.html content ends here -->
 {% endblock %}

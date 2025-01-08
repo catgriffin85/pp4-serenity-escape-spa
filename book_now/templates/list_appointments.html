@@ -7,7 +7,7 @@
 <!-- list_appointment.html content starts here -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
+<!-- list_appointment.html messages are displayed here along with appointment list and buttons to update or cancel appointment -->
 <div class="container">
     <div class="col-md-12 mb-6 mt-6 list-appointments">
         {% if messages %}
@@ -30,7 +30,7 @@
                 href="{% url 'edit_appointment' appointment.booking_id %}" class="btn update-btn">Update Appointment</a>
             <hr>
             <br>
-
+            <!-- list_appointment.html model for appointment cancellation -->
             <div class="modal fade" id="confirmCancelModal{{ appointment.booking_id }}" tabindex="-1"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
