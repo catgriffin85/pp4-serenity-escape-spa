@@ -6,37 +6,39 @@ from treatments.models import Treatment
 
 
 class AppointmentForm(forms.ModelForm):
-    
+
     appointment_date = forms.DateField(
         widget=forms.TextInput(attrs={
-            'id': 'datepicker', 
+            'id': 'datepicker',
             'placeholder': 'Select a Date',
         }),
         label="Select a Date"
     )
-    appointment_time = forms.ChoiceField(choices=TIMESLOT_CHOICES, label="Select a Time")
+    appointment_time = forms.ChoiceField(choices=TIMESLOT_CHOICES,
+                                         label="Select a Time")
 
-    
     class Meta:
         model = Appointment
-        fields = ["name", "treatment_selected", "appointment_date", "appointment_time", "requests"]
+        fields = ["name", "treatment_selected", "appointment_date",
+                  "appointment_time", "requests"]
         labels = {
             "name": "Your Name:",
             "treatment_selected": "Select a treatment:",
             "appointment_date": "Choose your preferred date:",
             "appointment_time": "Choose your preferred time:",
-            "requests": "Please outline any special requests or any information we should be aware of:",
+            "requests": "Additional information we should know:",
         }
-    
+
     def clean_appointment_date(self):
         selected_date = self.cleaned_data.get("appointment_date")
 
         if selected_date < date.today():
             raise forms.ValidationError("You cannot select a past date.")
-        
+
         if selected_date.weekday() == 6:
-            raise forms.ValidationError("Appointments cannot be booked on Sundays.")
-        
+            raise forms.ValidationError(
+                "Appointments cannot be booked on Sundays.")
+
         blocked_dates = [
             date(2024, 12, 24),
             date(2024, 12, 25),
@@ -56,7 +58,8 @@ class AppointmentForm(forms.ModelForm):
             date(2025, 12, 31),
         ]
         if selected_date in blocked_dates:
-            raise forms.ValidationError(f"Appointments cannot be booked on {selected_date}. Please pick another date.")
+            raise forms.ValidationError(
+                f"{selected_date} is not available. Please pick another date.")
 
         return selected_date
 

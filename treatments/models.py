@@ -6,6 +6,9 @@ STATUS = ((0, "Inactive"), (1, "Active"))
 
 # Create your models here.
 class Treatment(models.Model):
+    """
+    Represents a treatment offered by the spa.
+    """
     category = models.CharField(max_length=200)
     treatment = models.CharField(max_length=200)
     treatment_id = models.CharField(max_length=50)

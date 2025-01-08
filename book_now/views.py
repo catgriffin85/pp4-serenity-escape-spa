@@ -15,6 +15,14 @@ from treatments.models import Treatment
 def book_appointment(request):
     """
     Allows a logged-in user to book an appointment.
+    Displays instance of :model: `book_now.Appointment`.
+    Displays instance of :form: `book_now.AppointmentForm`.
+    **Context**
+    ``book_now``
+        The most recent instance of :model: `book_now.Appointment`.
+        The most recent instance of :form: `book_now.AppointmentForm`.
+    **Template**
+    :template:`book_now/book_now.html
     """
     appointment_form = AppointmentForm(request.POST or None)
 
@@ -48,6 +56,12 @@ def book_appointment(request):
 def list_appointments(request):
     """
     Displays a list of appointments for the logged-in user.
+    Displays instance of :model: `book_now.Appointment`.
+    **Context**
+    ``book_now``
+        The most recent instance of :model: `book_now.Appointment`.
+    **Template**
+    :template:`book_now/list_appointment.html
     """
     appointments = Appointment.objects.filter(user=request.user)
     return render(request, 'list_appointments.html',
@@ -58,6 +72,14 @@ def list_appointments(request):
 def edit_appointment(request, booking_id):
     """
     Allows a logged-in user to edit an existing appointment.
+    Displays instance of :model: `book_now.Appointment`.
+    Displays instance of :form: `book_now.AppointmentForm`.
+    **Context**
+    ``book_now``
+        The most recent instance of :model: `book_now.Appointment`.
+        The most recent instance of :form: `book_now.AppointmentForm`.
+    **Template**
+    :template:`book_now/edit_appointment.html
     """
     # Ensure the appointment belongs to the current user
     appointment = get_object_or_404(
@@ -87,6 +109,12 @@ def edit_appointment(request, booking_id):
 def list_appointments(request):
     """
     Displays a list of appointments for the logged-in user and handles appointment cancellations.
+    Displays instance of :model: `book_now.Appointment`.
+    **Context**
+    ``book_now``
+        The most recent instance of :model: `book_now.Appointment`.
+    **Template**
+    :template:`book_now/list_appointments.html
     """
     if request.method == 'POST':
         booking_id = request.POST.get('booking_id')
@@ -106,6 +134,12 @@ def list_appointments(request):
 def customer_review(request):
     """
     Allows a logged-in user to submit a review.
+    Displays instance of :form: `book_now.ReviewForm`.
+    **Context**
+    ``book_now``
+        The most recent instance of :form: `book_now.ReviewForm`..
+    **Template**
+    :template:`book_now/review.html
     """
 
     if request.method == "POST":
