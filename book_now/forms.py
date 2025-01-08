@@ -7,6 +7,12 @@ from treatments.models import Treatment
 
 class AppointmentForm(forms.ModelForm):
 
+    """
+    A form for booking an appointment, allowing users to select a treatment,
+    date, and time. The form also collects additional information and ensures
+    that selected dates are valid (not in the past, not on a Sunday, and not
+    on a list of blocked dates).
+    """
     appointment_date = forms.DateField(
         widget=forms.TextInput(attrs={
             'id': 'datepicker',
@@ -65,6 +71,10 @@ class AppointmentForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
+    """
+    A form for submitting a review of a treatment, including the user's name,
+    the treatment they reviewed, their rating, and their written feedback.
+    """
     class Meta:
         model = Review
         fields = ["name", "treatment_review", "score", "review"]
