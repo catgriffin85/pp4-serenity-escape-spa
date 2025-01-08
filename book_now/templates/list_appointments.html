@@ -23,8 +23,7 @@
         <br>
         <div class="change-app">
             {% for appointment in appointments %}
-            <li>Booking ID: {{ appointment.booking_id }} - {{ appointment.treatment_selected }} on {{
-                appointment.appointment_date }}
+            <li>Booking ID: {{ appointment.booking_id }} - {{ appointment.treatment_selected }} on {{ appointment.appointment_date }}
                 at {{ appointment.appointment_time }}</li>
             <button type="button" class="btn cancel-btn" data-bs-toggle="modal"
                 data-bs-target="#confirmCancelModal{{ appointment.booking_id }}">Cancel Appointment</button> <a
