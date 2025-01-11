@@ -7,6 +7,7 @@
 <!-- review.html content starts here -->
 
 <body>
+    <!-- review.html messages will be displayed here -->
     <div class="container">
         {% if messages %}
         <ul class="messages">
@@ -15,6 +16,7 @@
             {% endfor %}
         </ul>
         {% endif %}
+        <!-- review.html review form -->
         <div class="col-md-12 mb-6  mt-6 about-us">
             <h4>Thank you so much for taking the time to share your feedback! We truly appreciate it.</h4>
             <p class="review-username">Reviewing as: {{ user.username }}</p>
