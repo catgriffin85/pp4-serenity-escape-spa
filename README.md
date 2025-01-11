@@ -5,12 +5,17 @@
 This website is designed to create a relaxing and user-friendly online presence for the Serenity Escape Spa. The website enables users to explore a range of rejuvenating spa services, book appointments effortlessly, and connect with the spa team for any inquiries.
 Whether you’re seeking a tranquil escape or an appointment for a specific service, the Serenity Escape Spa website aims to deliver a seamless digital experience for both clients and administrators.
 
-You can view Serenity Escape Spa Website [here] (https://serenity-escape-spa-7cbc127367b8.herokuapp.com/)
+You can view Serenity Escape Spa Website [here](https://serenity-escape-spa-7cbc127367b8.herokuapp.com/)
 
-Link to admin panel: [here] (https://serenity-escape-spa-7cbc127367b8.herokuapp.com/admin/login/?next=/admin/)
-Admin login: 
+Link to admin panel: [here](https://serenity-escape-spa-7cbc127367b8.herokuapp.com/admin/login/?next=/admin/)
+
+<u>Admin login:</u>
+
 username: catgriffinpp4
+
 password: Serenity-escape
+
+![Screenshot Generator](static/images/responsive_device_image.png)
 
 ## Key Features
 
@@ -103,3 +108,46 @@ Acceptance Criteria:
 <strong>Nice to Have</strong>
 * Contact Us Page
 * About Us Page
+
+## Design
+
+<strong>Look and feel</strong>
+
+For the design of this website, I wanted to create a feeling of calm and relaxation for users when viewing my site. To do this I utilised a range of orange shades to create a cohesive visual palette. These colours vary from soft and warm tones to bolder tones, adding depth and contrast to the design.
+
+<strong>Font</strong>
+
+I used [Google Fonts](https://fonts.google.com/) for my font selection.
+
+Ysabeau Infant was used as the font for this website. This font was choosen because I felt like it added to the calm and relaxing feel of the site. Fall back font is Sans-serif.
+
+## Wireframes
+
+Before starting the project, I created wireframes to map out the initial design and functionality. These wireframes served as a blueprint to guide the development process. However, as the project progressed, I deviated from the original plan in several areas.
+
+This evolution was driven by practical considerations, feedback during development, and a focus on improving usability. I revisited the initial design choices and implemented adjustments that enhanced the overall user experience. The final design reflects these improvements, resulting in a more intuitive and user-friendly interface than originally envisioned.
+
+By allowing flexibility in the design process, I was able to refine and elevate the project's quality beyond the initial concept.
+
+<strong>Homepage wireframe</strong>
+
+![Homepage wireframe](static/images/wireframe_homepage.png)
+
+<strong>Treatment page wireframe</strong>
+
+Before user logs in:
+
+![Treatment page before login wireframe](static/images/wireframe_treatments_before_login.png)
+
+After user logs in:
+
+![Treatment page after login wireframe](static/images/wireframe_treatments.png)
+
+<strong>About Us & Contact Pages</strong>
+
+This pages were not used in the final project, instead the About Us including how to contact the spa were incorporated into a seperate Book Appointment page.
+
+![About Us](static/images/wireframe_about_page.png)
+
+![Contact](static/images/wireframe_contact_page.png)
+
