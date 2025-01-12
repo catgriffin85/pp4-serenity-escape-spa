@@ -436,6 +436,31 @@ I created this website with a user-friendly design with the hope of offering a s
 
     This combination of features ensures that the website is not only visually appealing but also functional and efficient, catering to both user and business needs.
 
+    ![Admin panel](static/images/admin_panel.png)
+
+    Treatments section
+
+    Treatments are managed in this section. All treatment details can be managed in this section. Treatments can be updated as inactive which will remove them from the Treatments page. Treatments can also be added and deleted from here.
+
+    ![Admin panel](static/images/admin_panel_treatment_overview.png)
+
+    ![Admin panel](static/images/admin_panel_treatment_detail.png)
+
+    Appointments section
+
+    All appointments can be viewed in this section. Appointments can be updated and deleted from here also. 
+
+    ![Admin panel](static/images/admin_panel_appointment_overview.png)
+
+    ![Admin panel](static/images/admin_panel_appointment_detail.png)
+
+    Reviews section
+
+    Reviews are managed in this section. Submitted reviews default to unapproved and must be approved in this admin panel to show on the homepage of the website. 
+
+    ![Admin panel](static/images/admin_panel_reviews.png)
+
+    ![Admin panel](static/images/admin_panel_reviews_detail.png)
 
 
 ## Testing
