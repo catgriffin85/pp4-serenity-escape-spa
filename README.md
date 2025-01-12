@@ -232,6 +232,209 @@ This django widget contains Date-Picker, Time-Picker, DateTime-Picker input widg
 
 ## Features
 
+I created this website with a user-friendly design with the hope of offering a seamless experience for both users and administrators. Below is an overview of the key pages and features.
+
+1. <strong>Navigation Bar</strong>
+
+    The navigation bar is designed to provide users with a seamless and intuitive browsing experience. At the top of every page, the navigation bar ensures easy access to the website’s key features. For new users, it includes options to Register and Sign In, allowing them to quickly create an account or log in to their existing one. Once logged in, the navigation bar dynamically updates to reflect the user’s status, offering personalized links such as My Appointments, where users can view and manage their booked appointments. This adaptive design ensures a user-friendly experience, guiding visitors to the most relevant options based on their needs and enhancing the overall functionality of the website.
+
+    View of nav bar before a user logs in:
+
+    ![Nav bar before login](static/images/nav_bar_before_login.png)
+
+    The user has the option to register a new account or login.
+
+    If the user selects Register,  it will bring them to the registration page: 
+
+    ![Registration page](static/images/registration_page.png)
+
+    If the user select Login, it will bring them to the login page:
+
+    ![Login Page](static/images/login_page.png)
+
+    After registering a new account or logging into an existing one, users will be redirected to the homepage, where the navigation bar dynamically updates to display personalized links.
+
+    ![Nav bar after login](static/images/nav_bar_after_login.png)
+
+    The user now has a direct link to their appointments and also an option to log out. 
+
+    ![Logout page](static/images/logout_page.png)
+
+    The My Appointments page is detailed later in this document.
+
+
+2. <strong>Homepage</strong>
+
+    The homepage serves as the welcoming face of the website, featuring a clean and elegant design that reflects the brand's identity. It offers visitors an immediate sense of what the business is all about.
+
+    The homepage contains three sections -
+
+    * Introduction
+
+        This section contains the hero image and introduces the spa to the visitors.
+
+        ![homepage introduction](static/images/homepage_introduction.png)
+    
+    * Link to Treatments page
+
+        This section invites visitors to view the treatments available. The View our Treatments button, when clicked, will bring the visitor to the Treatments page.
+
+        ![homepage treatments link](static/images/homepage_treatments_link.png)
+    
+    * Reviews section
+
+        The final section displays a list of 3 reviews. These are reviews submitted through the Reviews page by authenticated users. Once a review is submitted it needs to be approved in the admin panel before it displays on the homepage. The last three approved reviews show here.
+
+        ![Reviews](static/images/homepage_reviews.png)
+
+
+
+3. <strong>Treatments</strong>
+
+    This page showcases a detailed list of the treatments offered, complete with descriptions, durations, and pricing. Users can browse through the options to find the service that best suits their needs.
+
+    Each treatment has it's own card which contains the treatment category eg. Facial, massage or Mum to be, the name of the treatment, details of the treament, the cost and the duration. 
+    
+    Each card has a Book Now button that will bring the user to the Book Appointment page if they have logged in.
+
+    ![Treatments card](static/images/treatments_card.png)
+
+    The treatment page will display six cards per page and will vary from one card per line to three cards per line depending on the device the page is being viewed on. Each page has a button at the bottom to allow users to move through the pages. 
+
+    Each category will display a different image. 
+
+    Treatments can be updated, added or removed from the Admin Panel. 
+
+    ![Treatments Page 1](static/images/treatments_page1.png)
+
+    ![Treatments Page 2](static/images/treatments_page2.png)
+
+    ![Treatments Page 3](static/images/treatments_page3.png)
+
+    ![Treatments mobile view](static/images/treatments_mobile_device.png)
+
+    If the user has not logged in the will see an option on the top right of the page to log in to book an appointment and if they click on the Book Now button they will be brought to the Login page.
+
+    ![Treatments Page 1](static/images/treatments_login_button.png)
+
+
+4. <strong>Book Appointment</strong>
+
+    The website includes a booking system that allows users to schedule appointments effortlessly. The system ensures that bookings are confirmed in real time and displays availability to avoid conflicts.
+
+    The Book Appointment page has two sections - 
+
+    * Book Appointment form
+
+        The top of the form shows the user is logged in. All lines on the form are mandatory except for the very last line requesting additional information. 
+
+        The user must input their name, select a treatment from the list of treatments, select a date and time and can add additional information if they wish. Once the form is completed they must click Book Appointment to complete the booking.
+
+        Blank Form
+
+        ![Blank form](static/images/book_appointment_form_blank.png)
+
+        Selecting a treatment
+
+        ![Select a treatment](static/images/book_appointment_form_treatment_options.png)
+
+        Selecting a date. Sundays are blocked out on the calendar. There are a list of blocked dates built into the form eg. bank holidays. If the user tried to book a blocked date, they will receive an error message.
+
+        ![Select a Date](static/images/book_appointment_form_date_options.png)
+
+        ![Select a date error](static/images/book_appointment_form_date_options_error.png)
+
+        Selecting a time. If the user selects a date and time that has already been booked, they will receive an error message. 
+
+        ![Select a time](static/images/book_appointment_form_time_options.png)
+
+        ![Select a time](static/images/book_appointment_form_time_options_error.png)
+
+        Additional information
+
+        ![Additional information](static/images/book_appointment_form_add_info.png)
+
+    Once Book Appointment is selected the user is brought to the My Appointments page and will see a confirmation that their appointment has been booked. They can also access this page from a button underneath the form and from the nav bar link.
+
+    ![Confirmation](static/images/book_appointment_confirmation.png)
+
+
+    * About Us section
+
+        The About Us section provides the user with information on the address, phone number and email address of the spa.
+
+        ![About us](static/images/about_us_section.png)
+
+
+4. <strong>My Appointments</strong>
+
+    This page provides authenticated users with a full list of treatments they have booked and allow them to update or cancel their appointment. 
+
+    ![My appointments page](static/images/my_appointments_page.png)
+
+    Each appointment has two buttons underneath, one to cancel the appointment and the other to update the appointment. 
+
+    When the Cancel Appointment button is clicked, the user will receive a pop up asking them to confirm the cancellations. 
+
+    ![Cancel appointment confirmation](static/images/my_appointments_cancellation_confirmation.png)
+
+    Once the cancellation is confirmed the user will receive a confirmation that the appointment has been cancelled.
+
+    ![Cancel appointment confirmation](static/images/my_appointments_cancellation_confirmation_message.png)
+
+    When the Update Appointment button is clicked, the user will be brought to a new page showing the booking form again but this time the form is prepopulated with the appointment details. The user can change any line on the form and must select Save Changes once they are done. The same validations are in place eg. blocked dates cannot be booked, duplicate timeslot cannot be booked.
+
+    ![Update appointment form](static/images/my_appointments_update_appointment.png)
+
+    ![Update appointment form](static/images/my_appointments_update_appointment_treatment.png)
+
+    ![Update appointment form](static/images/my_appointments_update_appointment_date.png)
+
+    ![Update appointment form](static/images/my_appointments_update_appointment_time.png)
+
+    Once they have clicked on Save Changes, they will be returned to the My Appointments page. A confirmation of the change will be displayed at the top of the page.
+
+    ![Update appointment form](static/images/my_appointments_update_confirmation.png)
+
+    From this page, users can click on Leave us a Review or Book New Appointment. By clicking Leave us a Review, they will be brought to the Review page to leave their feedback. Clicking on the Book New Appointment button will redirect them to the Book Appointment page.
+
+5. <strong>Leave a Review</strong>
+
+    This page allows authenticated users provide feedback on the services they have received. 
+
+    ![Review form](static/images/review_blank.png)
+
+    The user must leave their name, select a treatment and score the service out of 5 before leaving their review. 
+
+    ![Review form](static/images/review_treatments.png)
+
+    ![Review form](static/images/review_complete.png)
+
+    If the user scores the service 0 or greater than 5 they will receive an error message at the top and also under the field. 
+
+    ![Review form](static/images/review_error.png)
+
+    ![Review form](static/images/review_error_0.png)
+
+    Once the review has been submitted the user will recieve confirmation at the top of the page. 
+
+    ![Review form](static/images/review_confirmation.png)
+
+    The user can then return to their appointment page by selecting the Return to your appointments button or any other page using the navigation bar.
+
+
+6. <strong>Footer</strong>
+
+    I went with a simplistic footer that contains just the spa name and a link to their social media pages. As this is not a real spa, the links direct just to Facebook and Instagram and not real business pages.
+
+    ![Footer](static/images/footer.png)
+
+
+7. <strong>Admin Panel</strong>
+
+    Administrators can manage appointments, update treamtment details, and approve reviews. These features provide flexibility and streamline business operations.
+
+    This combination of features ensures that the website is not only visually appealing but also functional and efficient, catering to both user and business needs.
 
 
 
@@ -271,7 +474,7 @@ W3C CSS Validator:
 
 CI Python Lintor:
 
-<u>Serenity Escape App</u>
+<strong>Serenity Escape App</strong>
 
 settings.py file
 
@@ -348,7 +551,9 @@ Credit to [Jorgen Brattang](https://github.com/JorgenBrattang/daily-math) for th
 * Heroku will notify you that the app was successfully deployed with a button to view the app.
 * If you want to rebuild your app automatically you can also select the 'Enable Automatic Deploys' button which will then rebuild the app every time you push any changes.
 
+## Conclusion
 
+In conclusion, creating this project has been an incredibly rewarding journey. Over the course of nearlyh 60 hours, I dedicated myself to crafting a functional and engaging website. While it was challenging at times, each obstacle presented an opportunity to learn and grow. From deepening my understanding of django and python to improving my problem-solving skills, this project has been a fantastic learning experience. I truly enjoyed project and am proud of the outcome.
 
 
 
