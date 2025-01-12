@@ -108,7 +108,8 @@ def edit_appointment(request, booking_id):
 @login_required
 def list_appointments(request):
     """
-    Displays a list of appointments for the logged-in user and handles appointment cancellations.
+    Displays a list of appointments for the logged-in user and handles
+    appointment cancellations.
     Displays instance of :model: `book_now.Appointment`.
     **Context**
     ``book_now``

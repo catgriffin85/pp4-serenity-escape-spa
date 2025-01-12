@@ -483,7 +483,7 @@ Book Appointment page:
 
 ![Lighthouse results for book appointment page](static/images/Lighthouse-results-book-appointment-page.png)
 
-List Appointments page:
+My Appointments page:
 
 ![Lighthouse results for list appointment page](static/images/Lighthouse-results-list-appointments-page.png)
 
@@ -491,6 +491,25 @@ List Appointments page:
 
 W3C HTML Validator:
 
+Homepage:
+
+![homepage html validator](static/images/html_validator_homepage.png)
+
+Treatments page:
+
+![treatments html validator](static/images/html_validator_treatments.png)
+
+Book Appointment page:
+
+An Info message is shown for a trailing slash. In Django templates, the default rendering may add a trailing slash to void elements if  using {% csrf_token %} or other template tags that output HTML.
+
+![book appointment html validator](static/images/html_validator_book_appointment.png)
+
+My Appointments page:
+
+An Info message is shown for a trailing slash. In Django templates, the default rendering may add a trailing slash to void elements if  using {% csrf_token %} or other template tags that output HTML.
+
+![my appointments html validator](static/images/html_validator_my_appointments.png)
 
 
 W3C CSS Validator:
@@ -531,8 +550,7 @@ forms.py file
 
 models.py file
 
-CHECK
-
+![forms.py](static/images/book_now_models.py.png)
 
 views.py file
 

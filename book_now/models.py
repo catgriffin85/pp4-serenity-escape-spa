@@ -43,7 +43,8 @@ class Appointment(models.Model):
         ordering = ["appointment_date", "appointment_time"]
 
     def __str__(self):
-        return f"{self.booking_id}/{self.name} - {self.treatment_selected} at {self.appointment_time} on {self.appointment_date}"
+        return f"{self.booking_id}/{self.name} - {self.treatment_selected} at {
+            self.appointment_time} on {self.appointment_date}"
 
 
 class Review(models.Model):
