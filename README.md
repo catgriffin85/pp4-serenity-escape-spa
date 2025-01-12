@@ -554,7 +554,47 @@ models.py file
 
 views.py file
 
-CHECK
+![forms.py](static/images/book_now_views.py.png)
+
+
+### Manual Testing
+
+To ensure the website meets all functional and usability requirements, a series of User Acceptance Tests (UAT) were conducted. These tests focused on critical features of the website, including the homepage layout, navigation links, and key user interactions. The objective was to verify that each feature behaves as expected and delivers a seamless experience for users.
+
+Each test case includes the expected outcome and the actual result. These tests help identify potential issues and ensure the website provides an optimal user experience.
+
+Full testing document can be viewed [here](https://docs.google.com/spreadsheets/d/1OqN6oORSaXCvefiwt5N-TIzGFkX7I7GiN6i8wKZURFE/edit?gid=84845225#gid=84845225)
+
+<strong>Navigation Bar</strong>
+
+![Nav bar tests](static/images/Nav_bar_testing.png)
+
+<strong>Footer</strong>
+
+![Footer testing](static/images/footer_testing.png)
+
+<strong>Homepage</strong>
+
+![homepage tests](static/images/homepage_testing.png)
+
+
+<strong>Treatments</strong>
+
+
+<strong>Book Appointment</strong>
+
+
+<strong>My Appointments</strong>
+
+
+<strong>Update Appointment</strong>
+
+
+<strong>Review</strong>
+
+
+
+
 
 ## Bugs
 
