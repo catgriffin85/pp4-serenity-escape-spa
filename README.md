@@ -467,7 +467,7 @@ I created this website with a user-friendly design with the hope of offering a s
 
 Thorough testing was a crucial part of this project to ensure functionality, usability, and reliability. I implemented a range of testing methods to identify and resolve issues at different stages of development. These included manual testing for user experience, functional testing to confirm that features behaved as intended, and debugging to address any errors or inconsistencies.
 
-This section outlines the tests conducted during the project, the issues identified, and the steps taken to resolve them. Additionally, I highlight any limitations discovered during testing and suggest potential areas for future improvement.
+This section outlines the different tests conducted on the project, any issues identified, and the steps taken to resolve them.
 
 <strong>Lighthouse</strong>
 
@@ -580,27 +580,33 @@ Full testing document can be viewed [here](https://docs.google.com/spreadsheets/
 
 <strong>Treatments</strong>
 
+![Treatments tests](static/images/treatments_testing.png)
 
 <strong>Book Appointment</strong>
 
+![Book appointment tests](static/images/book_appointment_testing.png)
 
 <strong>My Appointments</strong>
 
+![My appointments tests](static/images/my_appointments_testing.png)
 
 <strong>Update Appointment</strong>
 
+![Update appointment tests](static/images/update_appointment_testing.png)
 
 <strong>Review</strong>
 
+![Review tests](static/images/review_testing.png)
 
+<strong>Admin Panel</strong>
 
-
+![Admin panel tests](static/images/admin_panel_testing.png)
 
 ## Bugs
 
 <strong>Fixed Bugs</strong>
 
-After creating my first database, I change the name of the model but it didn’t change the name of the database. I deleted the migration and migrated again but that didn’t fix it. I had to add code to the meta class to change the name of the database which then worked.
+After creating my first database, I changed the name of the model but it didn’t change the name of the database. I deleted the migration and migrated again but that didn’t fix it. I had to add code to the meta class to change the name of the database which then worked.
 
 
 <strong>Unfixed Bugs</strong>
@@ -610,33 +616,77 @@ When users open the date picker to select an appointment I wanted to disable the
 
 ## Deployment to Heroku
 
-Credit to [Jorgen Brattang](https://github.com/JorgenBrattang/daily-math) for the description
+### Update the requirements.txt File
 
-* The requirements.txt file in the IDE must be updated to package all dependencies. To do this:
-    * Enter the following into the terminal: 'pip3 freeze > requirements.txt'
-    * Commit the changes and push to GitHub
-* Go to Heroku.com and sign in or create a free account.
-* From the heroku dashboard click the 'Create new app' button.
-* Name the app something unique and choose what region you are in then click 'Create app'.
-* Go to the settings tab and find the Config Vars section. Click 'Reveal Config Vars'.
-* In the field for KEY enter the value CREDS in all capitals.
-* In the field for VALUE copy and paste the entire contents of your creds.json file from your project. Then click 'Add'.
-* In the field for KEY enter PORT in all capitals, then in the field for VALUE enter 8000. Then click 'Add'.
-* Scroll down to the Buildpacks section and click 'Add buildpack'.
-* Click Python then save changes.
-* Add another buildpack by clicking 'Add buildpack' and this time click Nodejs then save changes.
-* Make sure that Python appears above Nodejs in the buildpack section. If it does not you can click and drag them to change the order.
-* Then head over to the deploy section by clicking deploy from the nav bar at the top of the page.
-* From the 'Deployment method' section select GitHub and click 'Connect to GitHub'.
-* Enter the repository name as it is in GitHub and click 'search'.
-* Click the 'connect' button next to the repository to link it to heroku.
-* To deploy, scroll down and click the 'Deploy Branch' button.
-* Heroku will notify you that the app was successfully deployed with a button to view the app.
-* If you want to rebuild your app automatically you can also select the 'Enable Automatic Deploys' button which will then rebuild the app every time you push any changes.
+* Open your project in an IDE or terminal.
+* Ensure all required dependencies are installed in your environment.
+* Run the following command to update requirements.txt: pip3 freeze > requirements.txt
+* This command generates a list of all installed Python packages and their versions.
+
+### Push Changes to GitHub
+
+* Commit the updated requirements.txt file to your repository.
+
+### Sign Up or Log In to Heroku
+
+* Go to Heroku's website and log in or create a free account.
+
+### Create a New App
+
+* From the Heroku dashboard, click the Create New App button.
+* Enter a unique name for your app and select your region (e.g., United States or Europe).
+* Click Create App.
+
+### Set Up Config Vars
+
+* Navigate to the Settings tab of your newly created app.
+* Scroll down to the Config Vars section and click Reveal Config Vars.
+* Add the following variables:
+    1. Key: CREDS
+
+        Value: Paste the entire contents of your creds.json file.
+
+    2. Key: PORT
+
+        Value: 8000
+
+* Click Add after entering each pair.
+
+### Configure Buildpacks
+
+* Scroll down to the Buildpacks section.
+* Click Add Buildpack and select Python. Save changes.
+* Click Add Buildpack again and select Node.js. Save changes.
+* Ensure Python is listed above Node.js. If not, drag Python to the top.
+
+### Connect to GitHub
+
+* Go to the Deploy tab in Heroku.
+* Under the Deployment Method section, select GitHub.
+* Click Connect to GitHub and authenticate your GitHub account if prompted.
+* In the search bar, enter the name of your GitHub repository and click Search.
+* Once your repository appears, click Connect.
+
+### Deploy Your App
+
+* Scroll down to the Manual Deploy section.
+* Select the branch you want to deploy (e.g., main or master) from the dropdown.
+* Click the Deploy Branch button.
+* Wait for Heroku to build and deploy your app. Once complete, you’ll see a success message with a View App button to preview your app.
+
+### Enable Automatic Deploys (Optional)
+
+* To enable automatic deployment from GitHub, toggle the Enable Automatic Deploys option under the Automatic Deploys section.
+* This ensures your app rebuilds automatically every time you push new changes to GitHub.
+
+### Test Your App
+
+* Click the View App button in Heroku to verify your app is running correctly.
+
 
 ## Conclusion
 
-In conclusion, creating this project has been an incredibly rewarding journey. Over the course of nearlyh 60 hours, I dedicated myself to crafting a functional and engaging website. While it was challenging at times, each obstacle presented an opportunity to learn and grow. From deepening my understanding of django and python to improving my problem-solving skills, this project has been a fantastic learning experience. I truly enjoyed project and am proud of the outcome.
+In conclusion, creating this project has been an incredibly rewarding journey. Over the course of nearly 60 hours, I dedicated myself to creating a functional and engaging website. While it was challenging at times, each obstacle presented an opportunity to learn and grow. From deepening my understanding of django and python to improving my problem-solving skills, this project has been a fantastic learning experience. I truly enjoyed project and am proud of the outcome.
 
 
 
