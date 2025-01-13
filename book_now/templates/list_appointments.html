@@ -22,6 +22,7 @@
         <h4>Please see a list of your appointments below.</h4>
         <br>
         <div class="change-app">
+            {% if appointments %}
             {% for appointment in appointments %}
             <li>Booking ID: {{ appointment.booking_id }} - {{ appointment.treatment_selected }} on {{ appointment.appointment_date }}
                 at {{ appointment.appointment_time }}</li>
@@ -56,7 +57,15 @@
                 </div>
             </div>
             {% endfor %}
+            {% else %}
+
+                <p>You have not yet booked an appointment with us. Ready to schedule your first treatment?</p>
+
+                <a href="{% url 'book_appointment' %}" class="btn book-new" role="button" aria-pressed="true">Book Now</a>
+
+            {% endif %}
         </div>
+        {% if appointments %}
         <p>Thank you for choosing us! We would greatly appreciate it if you could share your thoughts in a review.
         </p>
         <a href="{% url 'review' %}" class="btn book-new" role="button" aria-pressed="true">Leave us a Review</a>
@@ -65,6 +74,7 @@
         <p>Ready to book your next treatment?</p>
         <a href="{% url 'book_appointment' %}" class="btn book-new" role="button" aria-pressed="true">Book New
             Appointment</a>
+        {% endif %}
     </div>
     <br>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

@@ -610,10 +610,14 @@ After creating my first database, I changed the name of the model but it didn’
 
 During testing I found a bug on the Update Appointment page. When updating their appointment, users were allowed to book a slot that was already booked by another user. This functionality is available in the main book appointment form but not in the update appointment form. I updated my code to include a check for an existing appointment and the bug was fixed.
 
+While testing I realised that when a user has no appointments booked and they click on the My Appointment page there is no messaging to advise there are no appointments to view. I updated my code to display messaging based on if the user had an appointment booked. The Leave us a Review button is also disabled if an appointment has not yet been booked. 
+
 
 <strong>Unfixed Bugs</strong>
 
 When users open the date picker to select an appointment I wanted to disable the list of blocked dates on the calendar. After many tries, googling, talking to my mentor I could not get it to work the way I wanted it to work. I did manage to block out Sundays but any time I disabled the blocked dates it changed the format of my date picker which I didn't want. Ultimately I decided to proceed without the dates being blocked on the date picker but users will get an error message if they try to select one of the blocked dates. 
+
+I identified a bug during testing on the Update Appointment page where the user could book an existing appointment. This also happens on the Admin page. I updated the code and it was fixed on the "Update Appointment" page but did not fix it in the Admin Panel. 
 
 
 ## Deployment to Heroku
