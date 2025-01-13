@@ -89,10 +89,21 @@ def edit_appointment(request, booking_id):
         # Bind the request POST data to the existing appointment instance
         form = AppointmentForm(request.POST, instance=appointment)
         if form.is_valid():
-            form.save()
-            messages.success(
-                request, "Your appointment has been successfully updated!")
+
+            if Appointment.objects.filter(
+                appointment_date=appointment.appointment_date,
+                appointment_time=appointment.appointment_time
+            ).exists():
+                messages.error(
+                                request,
+                                "This time is fully booked.Please try again")
+            else:
+                form.save()
+                messages.success(
+                                  request,
+                                  "Your appointment has been updated!")
             return redirect('list_appointments')
+
         else:
             messages.error(
                            request,

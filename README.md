@@ -608,6 +608,8 @@ Full testing document can be viewed [here](https://docs.google.com/spreadsheets/
 
 After creating my first database, I changed the name of the model but it didn’t change the name of the database. I deleted the migration and migrated again but that didn’t fix it. I had to add code to the meta class to change the name of the database which then worked.
 
+During testing I found a bug on the Update Appointment page. When updating their appointment, users were allowed to book a slot that was already booked by another user. This functionality is available in the main book appointment form but not in the update appointment form. I updated my code to include a check for an existing appointment and the bug was fixed.
+
 
 <strong>Unfixed Bugs</strong>
 
