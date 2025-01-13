@@ -104,10 +104,6 @@ def edit_appointment(request, booking_id):
                                   "Your appointment has been updated!")
             return redirect('list_appointments')
 
-        else:
-            messages.error(
-                           request,
-                           "There was an error. Please try again.")
     else:
         # Populate the form with the existing appointment data
         form = AppointmentForm(instance=appointment)

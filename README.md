@@ -612,6 +612,8 @@ During testing I found a bug on the Update Appointment page. When updating their
 
 While testing I realised that when a user has no appointments booked and they click on the My Appointment page there is no messaging to advise there are no appointments to view. I updated my code to display messaging based on if the user had an appointment booked. The Leave us a Review button is also disabled if an appointment has not yet been booked. 
 
+Another bug found during testing was an error message that appeared on the My Appointments page if an error was made on the Update Appointment form. I felt this would be confusing to a user as they would get a message advising there was an error and then another message just under it advising the change was successful. I removed the error message from my code to resolve this.
+
 
 <strong>Unfixed Bugs</strong>
 
