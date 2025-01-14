@@ -24,7 +24,7 @@ password: Serenity-escape
 * <strong>Homepage: </strong> A welcoming introduction to the spa, featuring key highlights and testimonials.
 * <strong>Treatments Page: </strong> A detailed overview of spa services, including descriptions, pricing, and durations.
 * <strong>User login: </strong> Users can register, login and log out to book and view their appointments.
-* <strong>Booking System: </strong> Users can book appointments online by selecting their desired service, date, and time. They can also update their appointment and cancel their apppointments. Admins can manage bookings, update service offerings, and adjust available time slots.
+* <strong>Booking System: </strong> Users can book appointments online by selecting their desired service, date, and time. They can also update their appointment and cancel their apppointments. Admins can manage bookings, update service offerings, and approve customer reviews.
 
 This project has been developed using Agile methodology, ensuring iterative improvements and a user-focused design.
 
@@ -43,6 +43,7 @@ This project has been developed using Agile methodology, ensuring iterative impr
 <strong>User Story 1:1</strong>
 
 As a user, I want to view a visually appealing homepage, so that I can understand the spa's offerings at a glance.
+
 Acceptance Criteria:
 * Displays a hero image with a welcoming message.
 * Includes navigation links to other pages.
@@ -51,6 +52,7 @@ Acceptance Criteria:
 <strong>User Story 1:2</strong>
 
 As a user, I want to see customer reviews, so that I can trust the spa's services.
+
 Acceptance Criteria:
 * Testimonials section with 2-3 reviews displayed prominently.
 * Option for admin to add/edit/remove reviews.
@@ -60,20 +62,23 @@ Acceptance Criteria:
 <strong>User Story 2:1</strong>
 
 As a user, I want to view a list of services, so that I can choose the one that suits me.
+
 Acceptance Criteria:
 * Each service includes a name, description, duration, and price.
-* Easy-to-navigate layout with clear categories (if needed).
+* Easy-to-navigate layout with clear categories.
 
 <strong>User Story 2:2</strong>
 
-As an admin, I want to add, edit, or remove services, so that I can keep the services list up-to-date.
+As an admin, I want to add, edit, or remove treatments, so that I can keep the treatments list up-to-date.
+
 Acceptance Criteria:
-* Admin panel for managing services.
-* Changes are reflected immediately on the services page.
+* Admin panel for managing treatments.
+* Changes are reflected immediately on the treatments page.
 
 <strong>User Story 2:3</strong>
 
-As a user, I want to create an account, so that I can book an appointment for my preferred service.
+As a user, I want to create an account, so that I can book an appointment for my preferred treatments.
+
 Acceptance Criteria:
 * Option to create a new account.
 * Option to log in for users with an existing account.
@@ -84,17 +89,19 @@ Acceptance Criteria:
 <strong>User Story 2:4</strong>
 
 As a user, I want to book an appointment online, so that I can schedule a service at my convenience.
+
 Acceptance Criteria:
-* Booking form allows service selection, date, time, and user details.
+* Booking form allows treatment selection, date, time, and user details.
 * Confirmation message is displayed to the user upon successful booking.
 * Ability to update and cancel my appointments.
 
 <strong>User Story 2:5</strong>
 
 As an admin, I want to view all appointments, so that I can manage the spa's schedule efficiently.
+
 Acceptance Criteria:
 * Admin dashboard displaying upcoming appointments with details.
-* Option to filter by date or service type.
+* Option to filter by date or treatment type.
 
 ### Prioritisation
 
@@ -147,7 +154,7 @@ After user logs in:
 
 <strong>About Us & Contact Pages</strong>
 
-This pages were not used in the final project, instead the About Us including how to contact the spa were incorporated into a seperate Book Appointment page.
+These pages were not used in the final project, instead the About Us, including how to contact the spa, were incorporated into a seperate section on the Book Appointment page.
 
 ![About Us](static/images/wireframe_about_page.png)
 
@@ -193,31 +200,31 @@ Django installs some packages by default and some packages I installed. Below ar
 
 Django Python - pip3 install Django~=4.2.1
 
-<u>Gunicorn</u>
+_Gunicorn_
 
 gunicorn is a production equivalent of the manage.py runserver used in development but with speed and security optimisation.
 
-<u>Whitenoise</u>
+_Whitenoise_
 
 WhiteNoise works with any WSGI-compatible app but has some special auto-configuration features for Django. WhiteNoise takes care of best-practices.
 
-<u>Psycopg2</u>
+_Psycopg2_
 
 psycopg2 is a driver for interacting with PostgreSQL databases using Python. The dj-database-url Python package is a utility to connect Django to a database using a URL.
 
-<u>Allauth</u>
+_Allauth_
 
 Django-allauth is a Django package that provides a set of views, templates, and helper functions to handle user authentication, registration, and account management.
 
-<u>Django summernote</u>
+_Django summernote_
 
 Django summernote transforms the admin page, allowing rich text, that is, text with various formats like headings and paragraphs, unlike the plain text that Django's default textarea supports. It embeds a 'what you see is what you get' (WYSIWYG) editor, offering a live preview of the content and making editing intuitive.
 
-<u>Django-crispy-forms</u>
+_Django-crispy-forms_
 
 Django-crispy-forms provides you with a |crispy filter and {% crispy %} tag that will let you control the rendering behavior of your Django forms in a very elegant and DRY way. Have full control without writing custom form templates.
 
-<u>Django-flatpickr</u>
+_Django-flatpickr_
 
 This django widget contains Date-Picker, Time-Picker, DateTime-Picker input widgets with date-range-picker functionality for django version >= 2.0. The widget implements flatpickr to display date-pickers in django model forms and custom forms which can be configured easily for date-range selection.
 
@@ -610,7 +617,7 @@ After creating my first database, I changed the name of the model but it didn’
 
 During testing I found a bug on the Update Appointment page. When updating their appointment, users were allowed to book a slot that was already booked by another user. This functionality is available in the main book appointment form but not in the update appointment form. I updated my code to include a check for an existing appointment and the bug was fixed.
 
-While testing I realised that when a user has no appointments booked and they click on the My Appointment page there is no messaging to advise there are no appointments to view. I updated my code to display messaging based on if the user had an appointment booked. The Leave us a Review button is also disabled if an appointment has not yet been booked. 
+While testing I realised that when a user has no appointments booked and they click on the My Appointment page there is no messaging to advise there are no appointments to view. I updated my code to display messaging for users who do no have an appointment booked. The Leave us a Review button is also disabled if an appointment has not yet been booked. 
 
 Another bug found during testing was an error message that appeared on the My Appointments page if an error was made on the Update Appointment form. I felt this would be confusing to a user as they would get a message advising there was an error and then another message just under it advising the change was successful. I removed the error message from my code to resolve this.
 
@@ -694,7 +701,7 @@ I identified a bug during testing on the Update Appointment page where the user 
 
 ## Conclusion
 
-In conclusion, creating this project has been an incredibly rewarding journey. Over the course of nearly 60 hours, I dedicated myself to creating a functional and engaging website. While it was challenging at times, each obstacle presented an opportunity to learn and grow. From deepening my understanding of django and python to improving my problem-solving skills, this project has been a fantastic learning experience. I truly enjoyed project and am proud of the outcome.
+In conclusion, creating this project has been an incredibly rewarding journey. Over the course of nearly 62 hours, I dedicated myself to creating a functional and engaging website. While it was challenging at times, each obstacle presented an opportunity to learn and grow. From deepening my understanding of django and python to improving my problem-solving skills, this project has been a fantastic learning experience. I truly enjoyed project and am proud of the outcome.
 
 
 
