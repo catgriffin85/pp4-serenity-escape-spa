@@ -19,10 +19,10 @@
         {% endif %}
         <h3>Thank you for choosing Serenity Escape Spa.</h3>
         <br>
-        <h4>Please see a list of your appointments below.</h4>
-        <br>
         <div class="change-app">
             {% if appointments %}
+            <h4>Please see a list of your appointments below.</h4>
+            <br>
             {% for appointment in appointments %}
             <li>Booking ID: {{ appointment.booking_id }} - {{ appointment.treatment_selected }} on {{ appointment.appointment_date }}
                 at {{ appointment.appointment_time }}</li>
@@ -59,9 +59,9 @@
             {% endfor %}
             {% else %}
 
-                <p>You have not yet booked an appointment with us. Ready to schedule your first treatment?</p>
+            <p>You have not yet booked an appointment with us. Ready to schedule your first treatment?</p>
 
-                <a href="{% url 'book_appointment' %}" class="btn book-new" role="button" aria-pressed="true">Book Now</a>
+            <a href="{% url 'book_appointment' %}" class="btn book-new" role="button" aria-pressed="true">Book Now</a>
 
             {% endif %}
         </div>
