@@ -470,6 +470,10 @@ I created this website with a user-friendly design with the hope of offering a s
     ![Admin panel](static/images/admin_panel_reviews_detail.png)
 
 
+### Future Features
+
+In future updates, the My Appointments page will be enhanced to improve the user experience by dynamically displaying action buttons based on the status of appointments. Specifically, only future appointments will include options to Cancel Appointment and Update Appointment, ensuring users can easily manage upcoming bookings. Past appointments will remain visible for reference purposes but will not include options for modification or cancellation. This feature aims to streamline the interface and reduce potential confusion when managing appointments.
+
 ## Testing
 
 Thorough testing was a crucial part of this project to ensure functionality, usability, and reliability. I implemented a range of testing methods to identify and resolve issues at different stages of development. These included manual testing for user experience, functional testing to confirm that features behaved as intended, and debugging to address any errors or inconsistencies.
@@ -608,6 +612,12 @@ Full testing document can be viewed [here](https://docs.google.com/spreadsheets/
 <strong>Admin Panel</strong>
 
 ![Admin panel tests](static/images/admin_panel_testing.png)
+
+
+### Automated Testing
+
+
+
 
 ## Bugs
 

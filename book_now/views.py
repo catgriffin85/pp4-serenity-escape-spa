@@ -53,21 +53,6 @@ def book_appointment(request):
     })
 
 
-def list_appointments(request):
-    """
-    Displays a list of appointments for the logged-in user.
-    Displays instance of :model: `book_now.Appointment`.
-    **Context**
-    ``book_now``
-        The most recent instance of :model: `book_now.Appointment`.
-    **Template**
-    :template:`book_now/list_appointment.html
-    """
-    appointments = Appointment.objects.filter(user=request.user)
-    return render(request, 'list_appointments.html',
-                  {'appointments': appointments})
-
-
 @login_required
 def edit_appointment(request, booking_id):
     """
