@@ -533,7 +533,9 @@ CI Python Lintor:
 
 settings.py file
 
-CHECK
+An error did show on this file for line 111. But as you will see in the screenshot, the line cannot be shortened.
+
+![settings.py file](static/images/serenity_escape_settings.py.png)
 
 urls.py file
 
