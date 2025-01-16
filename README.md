@@ -405,6 +405,11 @@ I created this website with a user-friendly design with the hope of offering a s
 
     From this page, users can click on Leave us a Review or Book New Appointment. By clicking Leave us a Review, they will be brought to the Review page to leave their feedback. Clicking on the Book New Appointment button will redirect them to the Book Appointment page.
 
+    If the user has not yet booked an appointment and click into the My Appointment page they will see messaging to advise they have no appointments and a button to book an appointment is displayed. This will bring them to the Book Appointment page.
+
+    ![No appointments](static/images/my_appointments_no%20appointments.png)
+    
+  
 5. <strong>Leave a Review</strong>
 
     This page allows authenticated users provide feedback on the services they have received. 
@@ -576,7 +581,7 @@ To ensure the website meets all functional and usability requirements, a series 
 
 Each test case includes the expected outcome and the actual result. These tests help identify potential issues and ensure the website provides an optimal user experience.
 
-Full testing document can be viewed [here](https://docs.google.com/spreadsheets/d/1OqN6oORSaXCvefiwt5N-TIzGFkX7I7GiN6i8wKZURFE/edit?gid=84845225#gid=84845225)
+Testing document can be viewed [here](https://docs.google.com/spreadsheets/d/1OqN6oORSaXCvefiwt5N-TIzGFkX7I7GiN6i8wKZURFE/edit?gid=84845225#gid=84845225)
 
 <strong>Navigation Bar</strong>
 
@@ -618,14 +623,15 @@ Full testing document can be viewed [here](https://docs.google.com/spreadsheets/
 
 ### Automated Testing
 
+I developed automated tests for the project using Django's TestCase framework to validate key functionality, such as booking appointments, editing appointments, and submitting reviews. Unfortunately, the tests encountered an error: psycopg2.errors.UndefinedTable: relation "treatments_post" does not exist. This error was due to a reference to an outdated database table in the migrations, even though the table no longer exists. Despite attempting various solutions, including editing migrations and cleaning up the test database, the issue persisted.
 
-
+Since the treatments_treatment table is the primary database that feeds into all the forms, the unresolved error prevented the tests from running successfully. While I considered removing the test code from the project, I chose to keep it as a record of my efforts and learning experience. Debugging this issue has deepened my understanding of Django testing and database migrations. Although I plan to revisit and resolve this problem as my experience grows, I am confident that my successful manual testing accurately reflects the functionality and quality of my work.
 
 ## Bugs
 
 <strong>Fixed Bugs</strong>
 
-After creating my first database, I changed the name of the model but it didn’t change the name of the database. I deleted the migration and migrated again but that didn’t fix it. I had to add code to the meta class to change the name of the database which then worked.
+After creating my first database, I changed the name of the model but it didn’t change the name of the database. I deleted the migration and migrated again but that didn’t fix it. I had to add code to the meta class to change the name of the database which then worked. This bug caused issues later in the project during automated testing. So while it appeared fixed and the migration was showing as complete, my tests referenced the previous database name even though the only reference I could find of this database in my project was the code to rename it. This was extremely frustrating as I tried many steps to resolve the issue. It will definitely be a lesson for future projects. 
 
 During testing I found a bug on the Update Appointment page. When updating their appointment, users were allowed to book a slot that was already booked by another user. This functionality is available in the main book appointment form but not in the update appointment form. I updated my code to include a check for an existing appointment and the bug was fixed.
 
@@ -633,10 +639,9 @@ While testing I realised that when a user has no appointments booked and they cl
 
 Another bug found during testing was an error message that appeared on the My Appointments page if an error was made on the Update Appointment form. I felt this would be confusing to a user as they would get a message advising there was an error and then another message just under it advising the change was successful. I removed the error message from my code to resolve this.
 
-
 <strong>Unfixed Bugs</strong>
 
-When users open the date picker to select an appointment I wanted to disable the list of blocked dates on the calendar. After many tries, googling, talking to my mentor I could not get it to work the way I wanted it to work. I did manage to block out Sundays but any time I disabled the blocked dates it changed the format of my date picker which I didn't want. Ultimately I decided to proceed without the dates being blocked on the date picker but users will get an error message if they try to select one of the blocked dates. 
+When users open the date picker to select an appointment I wanted to disable the list of blocked dates on the calendar. After many tries, googling, talking to my mentor I could not get it to work the way I wanted it to work. I did manage to block out Sundays but any time I disabled the blocked dates it changed the format of my date picker which I didn't want. Ultimately I decided to proceed without the dates being blocked on the date picker. Users will get an error message if they try to select one of the blocked dates. 
 
 I identified a bug during testing on the Update Appointment page where the user could book an existing appointment. This also happens on the Admin page. I updated the code and it was fixed on the "Update Appointment" page but did not fix it in the Admin Panel. 
 
@@ -713,7 +718,7 @@ I identified a bug during testing on the Update Appointment page where the user 
 
 ## Conclusion
 
-In conclusion, creating this project has been an incredibly rewarding journey. Over the course of nearly 62 hours, I dedicated myself to creating a functional and engaging website. While it was challenging at times, each obstacle presented an opportunity to learn and grow. From deepening my understanding of django and python to improving my problem-solving skills, this project has been a fantastic learning experience. I truly enjoyed project and am proud of the outcome.
+In conclusion, creating this project has been an incredibly rewarding journey. Over the course of nearly 65 hours, I dedicated myself to creating a functional and engaging website. While it was challenging at times, each obstacle presented an opportunity to learn and grow. From deepening my understanding of django and python to improving my problem-solving skills, this project has been a fantastic learning experience. I truly enjoyed this project and am proud of the outcome.
 
 
 
