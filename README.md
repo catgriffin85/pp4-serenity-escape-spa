@@ -381,7 +381,7 @@ I created this website with a user-friendly design with the hope of offering a s
 
     Each appointment has two buttons underneath, one to cancel the appointment and the other to update the appointment. 
 
-    When the Cancel Appointment button is clicked, the user will receive a pop up asking them to confirm the cancellations. 
+    When the Cancel Appointment button is clicked, the user will receive a pop up asking them to confirm the cancellation. 
 
     ![Cancel appointment confirmation](static/images/my_appointments_cancellation_confirmation.png)
 
